@@ -81,8 +81,8 @@
 		FEBD92111B8CAD550099C140 /* SCBle */ = {
 			isa = PBXGroup;
 			children = (
-				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
+				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
 				FEBD92191B8CAD550099C140 /* ViewController.h */,
 				FEBD921A1B8CAD550099C140 /* ViewController.m */,
 				FEBD921C1B8CAD550099C140 /* Main.storyboard */,
@@ -414,6 +414,7 @@
 				FEBD92341B8CAD550099C140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEBD92351B8CAD550099C140 /* Build configuration list for PBXNativeTarget "SCBleTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				FEBD92371B8CAD550099C140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
