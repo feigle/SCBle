@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FEBD92151B8CAD550099C140 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD92141B8CAD550099C140 /* main.m */; };
-		FEBD92181B8CAD550099C140 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD92171B8CAD550099C140 /* AppDelegate.m */; };
 		FEBD921B1B8CAD550099C140 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD921A1B8CAD550099C140 /* ViewController.m */; };
 		FEBD921E1B8CAD550099C140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921C1B8CAD550099C140 /* Main.storyboard */; };
 		FEBD92201B8CAD550099C140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921F1B8CAD550099C140 /* Images.xcassets */; };
@@ -31,7 +30,6 @@
 		FEBD92131B8CAD550099C140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBD92141B8CAD550099C140 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEBD92161B8CAD550099C140 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FEBD92171B8CAD550099C140 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FEBD92191B8CAD550099C140 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FEBD921A1B8CAD550099C140 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FEBD921D1B8CAD550099C140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
-				FEBD92171B8CAD550099C140 /* AppDelegate.m */,
 				FEBD92191B8CAD550099C140 /* ViewController.h */,
 				FEBD921A1B8CAD550099C140 /* ViewController.m */,
 				FEBD921C1B8CAD550099C140 /* Main.storyboard */,
@@ -220,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEBD921B1B8CAD550099C140 /* ViewController.m in Sources */,
-				FEBD92181B8CAD550099C140 /* AppDelegate.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
