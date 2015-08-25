@@ -13,6 +13,7 @@
 		FEBD92201B8CAD550099C140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921F1B8CAD550099C140 /* Images.xcassets */; };
 		FEBD92231B8CAD550099C140 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBD92211B8CAD550099C140 /* LaunchScreen.xib */; };
 		FEBD922F1B8CAD550099C140 /* SCBleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD922E1B8CAD550099C140 /* SCBleTests.m */; };
+		FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD92381B8CB6FC0099C140 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FEBD92281B8CAD550099C140 /* SCBleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCBleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD922D1B8CAD550099C140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBD922E1B8CAD550099C140 /* SCBleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBleTests.m; sourceTree = "<group>"; };
+		FEBD92381B8CB6FC0099C140 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		FEBD92111B8CAD550099C140 /* SCBle */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
 				FEBD92191B8CAD550099C140 /* ViewController.h */,
 				FEBD921A1B8CAD550099C140 /* ViewController.m */,
@@ -218,6 +221,7 @@
 			files = (
 				FEBD921B1B8CAD550099C140 /* ViewController.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
+				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
