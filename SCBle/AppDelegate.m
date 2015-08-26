@@ -17,11 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSLog(@"new");
-    NSLog(@"err msg");
-    NSLog(@"err msg2");
-    NSLog(@"branch master");
-    NSLog(@"new dev branch");
     return YES;
 }
 
