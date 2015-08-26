@@ -21,6 +21,7 @@
     NSLog(@"err msg");
     NSLog(@"err msg2");
     NSLog(@"branch master");
+    NSLog(@"new dev branch");
     return YES;
 }
 
