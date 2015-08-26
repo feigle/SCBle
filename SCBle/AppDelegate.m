@@ -20,6 +20,7 @@
     NSLog(@"new");
     NSLog(@"err msg");
     NSLog(@"err msg2");
+    NSLog(@"branch master");
     return YES;
 }
 
