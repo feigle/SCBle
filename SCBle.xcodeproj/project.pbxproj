@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
+		C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2911B92DABD007897CA /* DeviceStatusCell.m */; };
+		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
+		C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2991B92EAF9007897CA /* HelpViews.m */; };
+		C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */; };
 		FEBD92151B8CAD550099C140 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD92141B8CAD550099C140 /* main.m */; };
-		FEBD921B1B8CAD550099C140 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD921A1B8CAD550099C140 /* ViewController.m */; };
+		FEBD921B1B8CAD550099C140 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD921A1B8CAD550099C140 /* RootViewController.m */; };
 		FEBD921E1B8CAD550099C140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921C1B8CAD550099C140 /* Main.storyboard */; };
 		FEBD92201B8CAD550099C140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921F1B8CAD550099C140 /* Images.xcassets */; };
 		FEBD92231B8CAD550099C140 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBD92211B8CAD550099C140 /* LaunchScreen.xib */; };
@@ -27,12 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C991D28C1B92D9C5007897CA /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
+		C991D28D1B92D9C5007897CA /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
+		C991D2901B92DABD007897CA /* DeviceStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusCell.h; sourceTree = "<group>"; };
+		C991D2911B92DABD007897CA /* DeviceStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusCell.m; sourceTree = "<group>"; };
+		C991D2941B92E776007897CA /* SBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDevice.h; sourceTree = "<group>"; };
+		C991D2951B92E776007897CA /* SBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDevice.m; sourceTree = "<group>"; };
+		C991D2981B92EAF9007897CA /* HelpViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViews.h; sourceTree = "<group>"; };
+		C991D2991B92EAF9007897CA /* HelpViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViews.m; sourceTree = "<group>"; };
+		C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceOperatorViewController.h; sourceTree = "<group>"; };
+		C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceOperatorViewController.m; sourceTree = "<group>"; };
 		FEBD920F1B8CAD550099C140 /* SCBle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD92131B8CAD550099C140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBD92141B8CAD550099C140 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEBD92161B8CAD550099C140 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FEBD92191B8CAD550099C140 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FEBD921A1B8CAD550099C140 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FEBD92191B8CAD550099C140 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		FEBD921A1B8CAD550099C140 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FEBD921D1B8CAD550099C140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEBD921F1B8CAD550099C140 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FEBD92221B8CAD550099C140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,6 +75,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C991D28A1B92D97D007897CA /* HomepageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C991D28F1B92DAA0007897CA /* cells */,
+				C991D28C1B92D9C5007897CA /* HomepageViewController.h */,
+				C991D28D1B92D9C5007897CA /* HomepageViewController.m */,
+			);
+			name = HomepageViewController;
+			sourceTree = "<group>";
+		};
+		C991D28B1B92D995007897CA /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD92191B8CAD550099C140 /* RootViewController.h */,
+				FEBD921A1B8CAD550099C140 /* RootViewController.m */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		C991D28F1B92DAA0007897CA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				C991D2901B92DABD007897CA /* DeviceStatusCell.h */,
+				C991D2911B92DABD007897CA /* DeviceStatusCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		C991D2931B92E74C007897CA /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C991D2941B92E776007897CA /* SBDevice.h */,
+				C991D2951B92E776007897CA /* SBDevice.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		C991D2971B92EAE2007897CA /* HelpViews */ = {
+			isa = PBXGroup;
+			children = (
+				C991D2981B92EAF9007897CA /* HelpViews.h */,
+				C991D2991B92EAF9007897CA /* HelpViews.m */,
+			);
+			name = HelpViews;
+			sourceTree = "<group>";
+		};
+		C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */,
+				C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */,
+			);
+			name = DeviceOperatorViewController;
+			sourceTree = "<group>";
+		};
 		FEBD92061B8CAD550099C140 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +153,11 @@
 			children = (
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
 				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
-				FEBD92191B8CAD550099C140 /* ViewController.h */,
-				FEBD921A1B8CAD550099C140 /* ViewController.m */,
+				C991D2931B92E74C007897CA /* DataModel */,
+				C991D2971B92EAE2007897CA /* HelpViews */,
+				C991D28B1B92D995007897CA /* RootViewController */,
+				C991D28A1B92D97D007897CA /* HomepageViewController */,
+				C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */,
 				FEBD921C1B8CAD550099C140 /* Main.storyboard */,
 				FEBD921F1B8CAD550099C140 /* Images.xcassets */,
 				FEBD92211B8CAD550099C140 /* LaunchScreen.xib */,
@@ -219,9 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEBD921B1B8CAD550099C140 /* ViewController.m in Sources */,
+				C991D2961B92E776007897CA /* SBDevice.m in Sources */,
+				C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */,
+				FEBD921B1B8CAD550099C140 /* RootViewController.m in Sources */,
+				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
+				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
+				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SCBle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SCBle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
