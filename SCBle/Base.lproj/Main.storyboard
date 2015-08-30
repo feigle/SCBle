@@ -149,9 +149,17 @@
                                             <constraint firstAttribute="height" constant="20" id="2dc-FH-xLF"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNg-7g-kfS">
+                                        <rect key="frame" x="155" y="147" width="64" height="64"/>
+                                        <state key="normal" title="ON" backgroundImage="baiguang_center">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.8666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="lNg-7g-kfS" secondAttribute="centerY" id="2CP-KP-lb4"/>
                                     <constraint firstItem="bBI-FI-lmF" firstAttribute="top" secondItem="A1g-86-rPa" secondAttribute="top" constant="35" id="6aS-yx-ehF"/>
                                     <constraint firstAttribute="bottom" secondItem="LLB-QO-emd" secondAttribute="bottom" constant="10" id="7Lb-WB-ppr"/>
                                     <constraint firstItem="LLB-QO-emd" firstAttribute="trailing" secondItem="Go0-5d-FfJ" secondAttribute="trailing" id="7pk-5A-g4D"/>
@@ -163,6 +171,7 @@
                                     <constraint firstAttribute="centerX" secondItem="bBI-FI-lmF" secondAttribute="centerX" id="dOK-rW-ziA"/>
                                     <constraint firstItem="l8i-ve-7TR" firstAttribute="top" secondItem="A1g-86-rPa" secondAttribute="top" constant="67" id="lT4-QG-MnX"/>
                                     <constraint firstItem="Go0-5d-FfJ" firstAttribute="leading" secondItem="l8i-ve-7TR" secondAttribute="leading" constant="-33" id="pWI-ge-Oj3"/>
+                                    <constraint firstAttribute="centerX" secondItem="lNg-7g-kfS" secondAttribute="centerX" id="qxA-HX-v22"/>
                                     <constraint firstItem="2D1-QL-np7" firstAttribute="top" secondItem="Go0-5d-FfJ" secondAttribute="bottom" id="vRN-jk-FIR"/>
                                 </constraints>
                             </view>
@@ -185,7 +194,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-LM-2hG" userLabel="rightSwitch">
-                                <rect key="frame" x="217.5" y="418" width="124" height="46"/>
+                                <rect key="frame" x="217" y="418" width="124" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="Jyx-xC-Do8"/>
@@ -285,6 +294,7 @@
     </scenes>
     <resources>
         <image name="baiguang" width="229" height="229"/>
+        <image name="baiguang_center" width="64" height="64"/>
         <image name="banner" width="320" height="220"/>
         <image name="deng_icon2" width="47" height="47"/>
         <image name="kaiguan_open" width="47" height="22"/>

@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UIView *leftBtn;
 @property (nonatomic, weak) IBOutlet UIView *rightBtn;
 @property (nonatomic, weak) IBOutlet UIView *musicBgView;
+// 开关按钮
+@property (nonatomic, weak) IBOutlet UIButton *ligthSwitch;
 
 @end
 
@@ -25,6 +27,8 @@
     // ADD CODE HERE
     [self initSwitchBtn];
     self.musicBgView.layer.cornerRadius = 3;
+    self.ligthSwitch.layer.cornerRadius = self.ligthSwitch.frame.size.height / 2.0;
+    self.ligthSwitch.clipsToBounds = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated

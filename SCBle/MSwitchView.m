@@ -111,5 +111,4 @@
     _isOn = isOn;
 }
 
-
 @end
