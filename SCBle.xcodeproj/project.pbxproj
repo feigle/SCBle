@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941A6271B932BFA00A62683 /* MSwitchView.m */; };
+		C941A62B1B932C2300A62683 /* MSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941A62A1B932C2300A62683 /* MSwitchView.xib */; };
 		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
 		C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2911B92DABD007897CA /* DeviceStatusCell.m */; };
 		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C941A6261B932BFA00A62683 /* MSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSwitchView.h; sourceTree = "<group>"; };
+		C941A6271B932BFA00A62683 /* MSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSwitchView.m; sourceTree = "<group>"; };
+		C941A62A1B932C2300A62683 /* MSwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSwitchView.xib; sourceTree = "<group>"; };
 		C991D28C1B92D9C5007897CA /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		C991D28D1B92D9C5007897CA /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
 		C991D2901B92DABD007897CA /* DeviceStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusCell.h; sourceTree = "<group>"; };
@@ -75,6 +80,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C941A6291B932C0000A62683 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C941A6261B932BFA00A62683 /* MSwitchView.h */,
+				C941A6271B932BFA00A62683 /* MSwitchView.m */,
+				C941A62A1B932C2300A62683 /* MSwitchView.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		C991D28A1B92D97D007897CA /* HomepageViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 		C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C941A6291B932C0000A62683 /* views */,
 				C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */,
 				C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */,
 			);
@@ -274,6 +290,7 @@
 			files = (
 				FEBD921E1B8CAD550099C140 /* Main.storyboard in Resources */,
 				FEBD92231B8CAD550099C140 /* LaunchScreen.xib in Resources */,
+				C941A62B1B932C2300A62683 /* MSwitchView.xib in Resources */,
 				FEBD92201B8CAD550099C140 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +314,7 @@
 				FEBD921B1B8CAD550099C140 /* RootViewController.m in Sources */,
 				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
+				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
 				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MSwitchView">
+            <rect key="frame" x="0.0" y="0.0" width="157" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YT8-5Q-QwF" userLabel="roundView">
+                    <rect key="frame" x="8" y="8" width="39" height="39"/>
+                    <color key="backgroundColor" red="0.30980392159999998" green="0.86666666670000003" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YT8-5Q-QwF" secondAttribute="height" multiplier="1:1" id="MAU-7d-CeJ"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="律动" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC8-iT-ut0">
+                    <rect key="frame" x="113" y="8" width="36" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK6-1a-19D" userLabel="eventBtn">
+                    <rect key="frame" x="0.0" y="0.0" width="157" height="55"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="switchClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="a0w-e5-QOe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yK6-1a-19D" secondAttribute="trailing" id="Bol-Ci-MjU"/>
+                <constraint firstItem="yK6-1a-19D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="F6w-gX-TOE"/>
+                <constraint firstAttribute="trailing" secondItem="YT8-5Q-QwF" secondAttribute="trailing" priority="250" constant="8" id="GuE-2b-mGR"/>
+                <constraint firstAttribute="bottom" secondItem="yK6-1a-19D" secondAttribute="bottom" id="QrP-df-5nT"/>
+                <constraint firstItem="lC8-iT-ut0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="250" constant="8" id="VT3-2g-hhX"/>
+                <constraint firstAttribute="trailing" secondItem="lC8-iT-ut0" secondAttribute="trailing" priority="750" constant="8" id="ZDj-bM-3Rz"/>
+                <constraint firstAttribute="bottom" secondItem="lC8-iT-ut0" secondAttribute="bottom" constant="8" id="f7K-ot-5cj"/>
+                <constraint firstItem="yK6-1a-19D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fZj-VT-chB"/>
+                <constraint firstItem="lC8-iT-ut0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="pIT-Gr-WbM"/>
+                <constraint firstItem="YT8-5Q-QwF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ufY-Pa-xbO"/>
+                <constraint firstAttribute="bottom" secondItem="YT8-5Q-QwF" secondAttribute="bottom" constant="8" id="vCh-SK-nMG"/>
+                <constraint firstItem="YT8-5Q-QwF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="750" constant="8" id="yfk-VY-6HU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="roundView" destination="YT8-5Q-QwF" id="BpU-r7-hfP"/>
+                <outlet property="roundViewLeft" destination="yfk-VY-6HU" id="Lr7-u9-qzl"/>
+                <outlet property="roundViewRight" destination="GuE-2b-mGR" id="73R-fG-jbw"/>
+                <outlet property="textLabel" destination="lC8-iT-ut0" id="KOi-eT-tew"/>
+                <outlet property="textLeft" destination="VT3-2g-hhX" id="5L8-3U-hus"/>
+                <outlet property="textRight" destination="ZDj-bM-3Rz" id="n6w-pj-U6s"/>
+            </connections>
+            <point key="canvasLocation" x="344.5" y="114.5"/>
+        </view>
+    </objects>
+</document>
