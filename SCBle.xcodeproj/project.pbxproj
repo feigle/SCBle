@@ -14,6 +14,8 @@
 		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
 		C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2991B92EAF9007897CA /* HelpViews.m */; };
 		C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */; };
+		C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */; };
+		C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */; };
 		FEBD92151B8CAD550099C140 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD92141B8CAD550099C140 /* main.m */; };
 		FEBD921B1B8CAD550099C140 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBD921A1B8CAD550099C140 /* RootViewController.m */; };
 		FEBD921E1B8CAD550099C140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD921C1B8CAD550099C140 /* Main.storyboard */; };
@@ -47,6 +49,10 @@
 		C991D2991B92EAF9007897CA /* HelpViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViews.m; sourceTree = "<group>"; };
 		C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceOperatorViewController.h; sourceTree = "<group>"; };
 		C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceOperatorViewController.m; sourceTree = "<group>"; };
+		C9BFD56A1B948ADD00D08E55 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseIndicateViewController.h; sourceTree = "<group>"; };
+		C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseIndicateViewController.m; sourceTree = "<group>"; };
 		FEBD920F1B8CAD550099C140 /* SCBle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD92131B8CAD550099C140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBD92141B8CAD550099C140 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +152,36 @@
 			name = DeviceOperatorViewController;
 			sourceTree = "<group>";
 		};
+		C9BFD5681B948A6800D08E55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C991D28B1B92D995007897CA /* RootViewController */,
+				C991D28A1B92D97D007897CA /* HomepageViewController */,
+				C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */,
+				C9BFD5691B948A8700D08E55 /* SettingViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C9BFD5691B948A8700D08E55 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFD5701B94943600D08E55 /* ViewControllers */,
+				C9BFD56A1B948ADD00D08E55 /* SettingViewController.h */,
+				C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */,
+			);
+			name = SettingViewController;
+			sourceTree = "<group>";
+		};
+		C9BFD5701B94943600D08E55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */,
+				C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FEBD92061B8CAD550099C140 = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +207,7 @@
 				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
 				C991D2931B92E74C007897CA /* DataModel */,
 				C991D2971B92EAE2007897CA /* HelpViews */,
-				C991D28B1B92D995007897CA /* RootViewController */,
-				C991D28A1B92D97D007897CA /* HomepageViewController */,
-				C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */,
+				C9BFD5681B948A6800D08E55 /* ViewControllers */,
 				FEBD921C1B8CAD550099C140 /* Main.storyboard */,
 				FEBD921F1B8CAD550099C140 /* Images.xcassets */,
 				FEBD92211B8CAD550099C140 /* LaunchScreen.xib */,
@@ -315,9 +349,11 @@
 				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
 				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
+				C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
 				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,
+				C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
