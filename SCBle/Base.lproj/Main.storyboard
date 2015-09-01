@@ -75,7 +75,7 @@
                                             <outlet property="deviceStatusBtn" destination="Jzl-bB-qem" id="pQc-oU-ZvI"/>
                                             <outlet property="deviceStatusImageView" destination="CdH-lw-dYG" id="1CC-ez-OKa"/>
                                             <outlet property="deviceStatusLabel" destination="Fnf-of-g5a" id="Z13-hy-hv6"/>
-                                            <segue destination="DNF-Gg-Esn" kind="show" id="dwW-xR-Ypg"/>
+                                            <segue destination="DNF-Gg-Esn" kind="show" id="sg3-lO-wBo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,12 +99,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838.5" y="338.5"/>
+            <point key="canvasLocation" x="838.5" y="314.5"/>
         </scene>
         <!--Device Operator View Controller-->
         <scene sceneID="xcI-jP-Vqn">
             <objects>
-                <viewController id="DNF-Gg-Esn" customClass="DeviceOperatorViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeviceOperatorIdentify" id="DNF-Gg-Esn" customClass="DeviceOperatorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ta-OM-dUS"/>
                         <viewControllerLayoutGuide type="bottom" id="8oL-dI-LN0"/>
@@ -293,7 +293,6 @@
         <!--Setting View Controller-->
         <scene sceneID="Fns-E5-2IY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zZh-xz-fIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="jym-W1-6Rj" customClass="SettingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0OI-P0-eLl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -374,6 +373,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Phh-m8-Lxn"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZh-xz-fIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838.5" y="1161.5"/>
         </scene>

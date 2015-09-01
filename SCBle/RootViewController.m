@@ -23,9 +23,11 @@
     // 对item设置相应图片
     item0.selectedImage = [[UIImage imageNamed:@"tab1_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item0.image = [[UIImage imageNamed:@"tab1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [item0 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     
     item1.selectedImage = [[UIImage imageNamed:@"tab2_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item1.image = [[UIImage imageNamed:@"tab2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [item1 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

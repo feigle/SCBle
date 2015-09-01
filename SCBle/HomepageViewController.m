@@ -7,10 +7,11 @@
 //
 
 #import "HomepageViewController.h"
+#import "DeviceOperatorViewController.h"
 #import "DeviceStatusCell.h"
 #import "SBDevice.h"
 
-@interface HomepageViewController ()
+@interface HomepageViewController ()<SWTableViewCellDelegate>
 
 // 设备列表
 @property (nonatomic, weak) IBOutlet UITableView *devicesView;
@@ -100,17 +101,91 @@
     return .0;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DeviceStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceStatusCell"];
     SBDevice *device = [self.devices objectAtIndex:indexPath.row];
     [cell fillCellWithDeviceInfo:device];
+    
+    [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];
+    cell.delegate = self;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DeviceOperatorViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DeviceOperatorIdentify"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                 icon:[UIImage imageNamed:@"cehua_bianji"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                 icon:[UIImage imageNamed:@"cehua_shijian"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
+                                                icon:[UIImage imageNamed:@"cehua_shanchu"]];
+    
+    return rightUtilityButtons;
+}
+
+#pragma mark - SWTableViewDelegate
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+        {
+            NSLog(@"0");
+            break;
+        }
+        case 1:
+        {
+            NSLog(@"1");
+            break;
+        }
+        case 2:
+            NSLog(@"2");
+        default:
+            break;
+    }
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+{
+    // allow just one cell's utility button to be open at once
+    return YES;
+}
+
+- (BOOL)swipeableTableViewCell:(SWTableViewCell *)cell canSwipeToState:(SWCellState)state
+{
+    switch (state) {
+        case 1:
+            // set to NO to disable all left utility buttons appearing
+            return YES;
+            break;
+        case 2:
+            // set to NO to disable all right utility buttons appearing
+            return YES;
+            break;
+        default:
+            break;
+    }
+    
+    return YES;
+}
+
+
 
 @end

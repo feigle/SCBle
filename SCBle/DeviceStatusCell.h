@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SWTableViewCell.h"
 
 @class SBDevice;
-@interface DeviceStatusCell : UITableViewCell
+@interface DeviceStatusCell : SWTableViewCell
 
 // 设备状态图片
 @property (nonatomic, weak) IBOutlet UIImageView *deviceStatusImageView;
