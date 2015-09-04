@@ -40,13 +40,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)initSwitchBtn
@@ -96,5 +94,12 @@
     [titleLabel sizeToFit];
     return titleLabel;
 }
+
+#pragma mark -- 退出当前视图
+- (IBAction)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

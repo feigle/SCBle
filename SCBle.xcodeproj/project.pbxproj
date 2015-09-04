@@ -14,6 +14,7 @@
 		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
 		C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2991B92EAF9007897CA /* HelpViews.m */; };
 		C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */; };
+		C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */; };
 		C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */; };
 		C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */; };
 		C9F2E0D91B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2E0CE1B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m */; };
@@ -55,6 +56,8 @@
 		C991D2991B92EAF9007897CA /* HelpViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViews.m; sourceTree = "<group>"; };
 		C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceOperatorViewController.h; sourceTree = "<group>"; };
 		C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceOperatorViewController.m; sourceTree = "<group>"; };
+		C9BBA1B61B99689700F63AD1 /* UIImage+colorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+colorImage.h"; sourceTree = "<group>"; };
+		C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+colorImage.m"; sourceTree = "<group>"; };
 		C9BFD56A1B948ADD00D08E55 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseIndicateViewController.h; sourceTree = "<group>"; };
@@ -170,6 +173,15 @@
 			name = DeviceOperatorViewController;
 			sourceTree = "<group>";
 		};
+		C9BBA1B51B99686C00F63AD1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C9BBA1B61B99689700F63AD1 /* UIImage+colorImage.h */,
+				C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		C9BFD5681B948A6800D08E55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,9 +260,10 @@
 		FEBD92111B8CAD550099C140 /* SCBle */ = {
 			isa = PBXGroup;
 			children = (
-				C9F2E0CB1B95FCB8001686A1 /* vendor */,
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
 				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
+				C9F2E0CB1B95FCB8001686A1 /* vendor */,
+				C9BBA1B51B99686C00F63AD1 /* Category */,
 				C991D2931B92E74C007897CA /* DataModel */,
 				C991D2971B92EAE2007897CA /* HelpViews */,
 				C9BFD5681B948A6800D08E55 /* ViewControllers */,
@@ -398,6 +411,7 @@
 				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
 				C9F2E0DD1B95FCF6001686A1 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
+				C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */,
 				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
 				C9F2E0DA1B95FCF6001686A1 /* SWCellScrollView.m in Sources */,
 				C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */,

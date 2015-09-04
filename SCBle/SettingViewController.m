@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.titleView = [self customNavigationTitleView];
+    
+    // 更换返回按钮背景按钮图片
+    UIImage *backButtonImage = [[UIImage imageNamed:@"icon_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIBarButtonItem *backBarItem = [[UIBarButtonItem alloc] init];
+    backBarItem.title = @"";
+    [backBarItem setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [backBarItem setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0) forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.backBarButtonItem = backBarItem;
 }
 
 // 自定义导航栏标题视图

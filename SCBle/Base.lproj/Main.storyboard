@@ -156,6 +156,20 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-c3-BGg">
+                                        <rect key="frame" x="8" y="35" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="LVQ-A9-Bol"/>
+                                            <constraint firstAttribute="height" constant="22" id="w9G-bi-Jgm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" image="icon_back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="DNF-Gg-Esn" eventType="touchUpInside" id="uBJ-GZ-fMv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.8666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -166,7 +180,9 @@
                                     <constraint firstItem="Go0-5d-FfJ" firstAttribute="trailing" secondItem="l8i-ve-7TR" secondAttribute="trailing" constant="33" id="9d3-CK-rM9"/>
                                     <constraint firstItem="LLB-QO-emd" firstAttribute="top" secondItem="Go0-5d-FfJ" secondAttribute="bottom" id="9yF-2F-u2j"/>
                                     <constraint firstAttribute="centerX" secondItem="l8i-ve-7TR" secondAttribute="centerX" id="BSF-Qx-SbP"/>
+                                    <constraint firstItem="bBI-FI-lmF" firstAttribute="top" secondItem="EU1-c3-BGg" secondAttribute="top" id="Do3-1W-DX0"/>
                                     <constraint firstItem="Go0-5d-FfJ" firstAttribute="top" secondItem="l8i-ve-7TR" secondAttribute="bottom" constant="15" id="Q0i-pn-VHf"/>
+                                    <constraint firstItem="EU1-c3-BGg" firstAttribute="leading" secondItem="A1g-86-rPa" secondAttribute="leading" constant="8" id="Z1d-It-YRf"/>
                                     <constraint firstItem="Go0-5d-FfJ" firstAttribute="leading" secondItem="2D1-QL-np7" secondAttribute="leading" id="bUT-xA-07x"/>
                                     <constraint firstAttribute="centerX" secondItem="bBI-FI-lmF" secondAttribute="centerX" id="dOK-rW-ziA"/>
                                     <constraint firstItem="l8i-ve-7TR" firstAttribute="top" secondItem="A1g-86-rPa" secondAttribute="top" constant="67" id="lT4-QG-MnX"/>
@@ -478,6 +494,7 @@
         <image name="baiguang_center" width="64" height="64"/>
         <image name="banner" width="320" height="220"/>
         <image name="deng_icon2" width="47" height="47"/>
+        <image name="icon_back" width="22" height="22"/>
         <image name="kaiguan_open" width="47" height="22"/>
         <image name="liangdu_bg" width="282" height="20"/>
         <image name="liangdu_big" width="22" height="22"/>

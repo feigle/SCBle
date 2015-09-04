@@ -47,6 +47,14 @@
     [self.devicesView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.navigationController.navigationBar.hidden = NO;
+    }];
+}
+
 // 自定义导航栏标题视图
 - (UIView *)customNavigationTitleView
 {
