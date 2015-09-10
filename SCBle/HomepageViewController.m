@@ -10,6 +10,7 @@
 #import "DeviceOperatorViewController.h"
 #import "DeviceStatusCell.h"
 #import "SBDevice.h"
+#import "UIImage+colorImage.h"
 
 @interface HomepageViewController ()<SWTableViewCellDelegate>
 
@@ -26,6 +27,14 @@
 {
     [super viewDidLoad];
     // ADD CODE HERE
+    // 更换返回按钮背景按钮图片
+    UIImage *backButtonImage = [[UIImage imageNamed:@"icon_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIBarButtonItem *backBarItem = [[UIBarButtonItem alloc] init];
+    backBarItem.title = @"";
+    [backBarItem setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [backBarItem setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0) forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.backBarButtonItem = backBarItem;
+    
     self.navigationItem.titleView = [self customNavigationTitleView];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(scanDevices:)];
     self.navigationItem.rightBarButtonItem = rightItem;
@@ -50,9 +59,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.navigationController.navigationBar.hidden = NO;
-    }];
+    
+    [self.navigationController.navigationBar
+     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]]
+     forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor lightGrayColor]];
 }
 
 // 自定义导航栏标题视图

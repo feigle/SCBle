@@ -8,6 +8,7 @@
 
 #import "DeviceOperatorViewController.h"
 #import "MSwitchView.h"
+#import "UIImage+colorImage.h"
 
 @interface DeviceOperatorViewController ()
 
@@ -29,12 +30,33 @@
     self.musicBgView.layer.cornerRadius = 3;
     self.ligthSwitch.layer.cornerRadius = self.ligthSwitch.frame.size.height / 2.0;
     self.ligthSwitch.clipsToBounds = YES;
+    
+    self.navigationItem.titleView = [self customNavigationTitleView];
+    
+    self.tabBarController.tabBar.hidden = YES;
+    
+    [self.navigationController.navigationBar
+     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]]
+     forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]];
 }
+
+// 自定义导航栏标题视图
+- (UIView *)customNavigationTitleView
+{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"灯光控制"];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1] range:NSMakeRange(0, 4)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    titleLabel.font = [UIFont systemFontOfSize:20];
+    titleLabel.attributedText = attributedString;
+    [titleLabel sizeToFit];
+    return titleLabel;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
