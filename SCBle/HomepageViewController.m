@@ -11,8 +11,10 @@
 #import "DeviceStatusCell.h"
 #import "SBDevice.h"
 #import "UIImage+colorImage.h"
+#import "STBleController.h"
+#import "STPeripheral.h"
 
-@interface HomepageViewController ()<SWTableViewCellDelegate>
+@interface HomepageViewController ()<SWTableViewCellDelegate, STBleCommProtocol>
 
 // 设备列表
 @property (nonatomic, weak) IBOutlet UITableView *devicesView;
@@ -38,22 +40,12 @@
     self.navigationItem.titleView = [self customNavigationTitleView];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(scanDevices:)];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
+    // 初始化蓝牙管理控制器
+    STBleController *bleController = [STBleController getInstance];
+    bleController.dataDelegate = self;
+    [bleController open];
 
-    // 构造数据
-    SBDevice *device = [SBDevice new];
-    device.on = NO;
-    device.name = @"客厅情感灯";
-    
-    SBDevice *device2 = [SBDevice new];
-    device2.on = NO;
-    device2.name = @"蓝牙情感灯2";
-    
-    SBDevice *device3 = [SBDevice new];
-    device3.on = NO;
-    device3.name = @"蓝牙情感灯3";
-    
-    self.devices = [NSArray arrayWithObjects:device, device2, device3, nil];
-    [self.devicesView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -82,7 +74,7 @@
 #pragma mark -- 搜索设备
 - (void)scanDevices:(id)sender
 {
-    
+    [[STBleController getInstance] searchDevices];
 }
 
 
@@ -99,6 +91,41 @@
     }
 }
 
+#pragma mark -- STBleCommProtocol
+- (void)discoverDevice:(NSMutableArray *)mArray
+{
+    self.devices = mArray;
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.devicesView reloadData];
+    });
+}
+
+- (void)dataArrive:(unsigned char *)buf
+{
+    
+}
+
+//连接成功，可以发送数据
+- (void)connectOK
+{
+    
+}
+
+//连接丢失
+- (void)hasDisconecnt
+{
+    
+}
+
+//连接失败
+- (void)connectFail
+{
+    
+}
+
+
 #pragma mark -- UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -107,7 +134,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.devices.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +155,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DeviceStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceStatusCell"];
-    SBDevice *device = [self.devices objectAtIndex:indexPath.row];
+    STPeripheral *device = [self.devices objectAtIndex:indexPath.row];
     [cell fillCellWithDeviceInfo:device];
     
     [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];

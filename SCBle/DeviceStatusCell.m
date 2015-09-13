@@ -7,19 +7,19 @@
 //
 
 #import "DeviceStatusCell.h"
-#import "SBDevice.h"
+#import "STPeripheral.h"
 
 @implementation DeviceStatusCell
 
 // 填充单元格数据
-- (void)fillCellWithDeviceInfo:(SBDevice *)deviceInfo
+- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo
 {
     if (deviceInfo.on) {
         [self.deviceStatusBtn setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
         [self.deviceStatusBtn setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
     }
-    self.deviceNameLabel.text = deviceInfo.name;
+    self.deviceNameLabel.text = deviceInfo.DName;
 }
 
 @end

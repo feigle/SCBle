@@ -37,10 +37,10 @@
     
     static dispatch_queue_t myQueue;
     if(!myQueue) {
-        myQueue = dispatch_queue_create("aps.processUpgrade.queue",nil);}
-    CManager = [[CBCentralManager alloc] initWithDelegate:(id<CBCentralManagerDelegate>)self queue:myQueue];
-    
-    
+//        myQueue = dispatch_queue_create("aps.processUpgrade.queue",nil);
+        myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        CManager = [[CBCentralManager alloc] initWithDelegate:(id<CBCentralManagerDelegate>)self queue:myQueue];
+    }
 }
 
 - (void) writeData:(NSData *) data
@@ -110,7 +110,6 @@
     
     for (STPeripheral *stPe in deviceList) {
         if(stPe.DPeripheral == peripheral) {
-            
             return;
         }
     }
