@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941A6271B932BFA00A62683 /* MSwitchView.m */; };
 		C941A62B1B932C2300A62683 /* MSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941A62A1B932C2300A62683 /* MSwitchView.xib */; };
+		C97257731BA53CA60024D022 /* STBleController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97257701BA53CA60024D022 /* STBleController.m */; };
+		C97257741BA53CA60024D022 /* STPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C97257721BA53CA60024D022 /* STPeripheral.m */; };
 		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
 		C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2911B92DABD007897CA /* DeviceStatusCell.m */; };
 		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
@@ -46,6 +48,10 @@
 		C941A6261B932BFA00A62683 /* MSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSwitchView.h; sourceTree = "<group>"; };
 		C941A6271B932BFA00A62683 /* MSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSwitchView.m; sourceTree = "<group>"; };
 		C941A62A1B932C2300A62683 /* MSwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSwitchView.xib; sourceTree = "<group>"; };
+		C972576F1BA53CA60024D022 /* STBleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBleController.h; sourceTree = "<group>"; };
+		C97257701BA53CA60024D022 /* STBleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBleController.m; sourceTree = "<group>"; };
+		C97257711BA53CA60024D022 /* STPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPeripheral.h; sourceTree = "<group>"; };
+		C97257721BA53CA60024D022 /* STPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPeripheral.m; sourceTree = "<group>"; };
 		C991D28C1B92D9C5007897CA /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		C991D28D1B92D9C5007897CA /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
 		C991D2901B92DABD007897CA /* DeviceStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusCell.h; sourceTree = "<group>"; };
@@ -115,6 +121,17 @@
 				C941A62A1B932C2300A62683 /* MSwitchView.xib */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		C972576E1BA53C740024D022 /* blueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				C972576F1BA53CA60024D022 /* STBleController.h */,
+				C97257701BA53CA60024D022 /* STBleController.m */,
+				C97257711BA53CA60024D022 /* STPeripheral.h */,
+				C97257721BA53CA60024D022 /* STPeripheral.m */,
+			);
+			name = blueTooth;
 			sourceTree = "<group>";
 		};
 		C991D28A1B92D97D007897CA /* HomepageViewController */ = {
@@ -262,6 +279,7 @@
 			children = (
 				FEBD92161B8CAD550099C140 /* AppDelegate.h */,
 				FEBD92381B8CB6FC0099C140 /* AppDelegate.m */,
+				C972576E1BA53C740024D022 /* blueTooth */,
 				C9F2E0CB1B95FCB8001686A1 /* vendor */,
 				C9BBA1B51B99686C00F63AD1 /* Category */,
 				C991D2931B92E74C007897CA /* DataModel */,
@@ -418,6 +436,8 @@
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 				C9F2E0DC1B95FCF6001686A1 /* SWTableViewCell.m in Sources */,
 				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
+				C97257741BA53CA60024D022 /* STPeripheral.m in Sources */,
+				C97257731BA53CA60024D022 /* STBleController.m in Sources */,
 				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,
 				C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */,
 			);
