@@ -15,7 +15,7 @@
 @interface STPeripheral : NSObject
 
 @property (nonatomic,strong)NSString *DName;
-@property (nonatomic, assign) BOOL on;
+@property (nonatomic, assign) BOOL isConnected;
 @property (nonatomic,strong)CBPeripheral *DPeripheral;
 
 @property (nonatomic,retain)CBService *DService;

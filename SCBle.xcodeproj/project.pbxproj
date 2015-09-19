@@ -13,7 +13,6 @@
 		C97257741BA53CA60024D022 /* STPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C97257721BA53CA60024D022 /* STPeripheral.m */; };
 		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
 		C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2911B92DABD007897CA /* DeviceStatusCell.m */; };
-		C991D2961B92E776007897CA /* SBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2951B92E776007897CA /* SBDevice.m */; };
 		C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2991B92EAF9007897CA /* HelpViews.m */; };
 		C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */; };
 		C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */; };
@@ -56,8 +55,6 @@
 		C991D28D1B92D9C5007897CA /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
 		C991D2901B92DABD007897CA /* DeviceStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusCell.h; sourceTree = "<group>"; };
 		C991D2911B92DABD007897CA /* DeviceStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusCell.m; sourceTree = "<group>"; };
-		C991D2941B92E776007897CA /* SBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDevice.h; sourceTree = "<group>"; };
-		C991D2951B92E776007897CA /* SBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDevice.m; sourceTree = "<group>"; };
 		C991D2981B92EAF9007897CA /* HelpViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViews.h; sourceTree = "<group>"; };
 		C991D2991B92EAF9007897CA /* HelpViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViews.m; sourceTree = "<group>"; };
 		C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceOperatorViewController.h; sourceTree = "<group>"; };
@@ -165,8 +162,6 @@
 		C991D2931B92E74C007897CA /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				C991D2941B92E776007897CA /* SBDevice.h */,
-				C991D2951B92E776007897CA /* SBDevice.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -420,7 +415,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C991D2961B92E776007897CA /* SBDevice.m in Sources */,
 				C9F2E0DB1B95FCF6001686A1 /* SWLongPressGestureRecognizer.m in Sources */,
 				C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */,
 				C9F2E0DE1B95FCF6001686A1 /* SWUtilityButtonView.m in Sources */,

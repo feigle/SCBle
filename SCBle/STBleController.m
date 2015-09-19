@@ -52,9 +52,12 @@
 {
     [CManager connectPeripheral:peripheral.DPeripheral options:nil];
 }
-- (void) didDisconnect:(CBPeripheral *)peripheral
+
+- (void) didDisconnect:(STPeripheral *)peripheral
 {
+    [CManager cancelPeripheralConnection:peripheral.DPeripheral];
 }
+
 - (void) searchDevices
 {
     [CManager scanForPeripheralsWithServices:nil options:nil];
@@ -225,6 +228,9 @@
 - (int )ParseResult:(unsigned char *)buf bufLen:(int)len
 {   //<11 0500 01 02 55 5d00 12>
     //<11 0f00 01 00 0900 424c55453130435634 6f02 12>
+    if (len <= 0) {
+        return -1;
+    }
     if (buf[3] == 0x01 && buf[4] == 0x02) {//首次确认命令
         if(buf[6] == 0x55)
         {

@@ -31,7 +31,7 @@
 - (void) open;
 - (void) writeData:(NSData *) data;//发送数据
 - (void) didConnect:(STPeripheral *)peripheral;//连接
-- (void) didDisconnect:(CBPeripheral *)peripheral;//断开连接
+- (void) didDisconnect:(STPeripheral *)peripheral;//断开连接
 - (void) searchDevices;//搜索设备
 - (void) stopSearch;//停止搜索
 

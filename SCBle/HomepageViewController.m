@@ -9,7 +9,6 @@
 #import "HomepageViewController.h"
 #import "DeviceOperatorViewController.h"
 #import "DeviceStatusCell.h"
-#import "SBDevice.h"
 #import "UIImage+colorImage.h"
 #import "STBleController.h"
 #import "STPeripheral.h"
@@ -24,6 +23,10 @@
 @end
 
 @implementation HomepageViewController
+{
+    // 蓝牙连接管理器
+    STBleController *bleController;
+}
 
 - (void)viewDidLoad
 {
@@ -42,7 +45,7 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     
     // 初始化蓝牙管理控制器
-    STBleController *bleController = [STBleController getInstance];
+    bleController = [STBleController getInstance];
     bleController.dataDelegate = self;
     [bleController open];
 
@@ -81,13 +84,14 @@
 #pragma mark -- 切换设备状态
 - (IBAction)switchDeviceItem:(UIButton *)sender
 {
-    static BOOL on = YES;
-    if (on) {
-        [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
-        on = NO;
+    NSInteger tag = sender.tag - 1000;
+    STPeripheral *peripheral = [self.devices objectAtIndex:tag];
+    if (!peripheral.isConnected) {
+        [bleController didConnect:peripheral];
+//        [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
     }else {
-        [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
-        on = YES;
+        [bleController didDisconnect:peripheral];
+//        [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }
 }
 
@@ -156,7 +160,7 @@
 {
     DeviceStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceStatusCell"];
     STPeripheral *device = [self.devices objectAtIndex:indexPath.row];
-    [cell fillCellWithDeviceInfo:device];
+    [cell fillCellWithDeviceInfo:device withTag:indexPath.row];
     
     [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];
     cell.delegate = self;

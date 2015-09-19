@@ -12,9 +12,10 @@
 @implementation DeviceStatusCell
 
 // 填充单元格数据
-- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo
+- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo withTag:(NSInteger)tag
 {
-    if (deviceInfo.on) {
+    self.deviceStatusBtn.tag = 1000 + tag;
+    if (deviceInfo.isConnected) {
         [self.deviceStatusBtn setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
         [self.deviceStatusBtn setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];

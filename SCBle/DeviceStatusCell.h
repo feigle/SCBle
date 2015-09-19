@@ -22,6 +22,6 @@
 @property (nonatomic, weak) IBOutlet UIButton *deviceStatusBtn;
 
 // 填充单元格数据
-- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo;
+- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo withTag:(NSInteger)tag;
 
 @end
