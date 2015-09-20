@@ -18,6 +18,8 @@
 		C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */; };
 		C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */; };
 		C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */; };
+		C9F1A14F1BAEFAB200AD9A47 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A14E1BAEFAB200AD9A47 /* InfoViewController.m */; };
+		C9F1A1521BAEFAE500AD9A47 /* VersionUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A1511BAEFAE500AD9A47 /* VersionUpdateViewController.m */; };
 		C9F2E0D91B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2E0CE1B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m */; };
 		C9F2E0DA1B95FCF6001686A1 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2E0D01B95FCF6001686A1 /* SWCellScrollView.m */; };
 		C9F2E0DB1B95FCF6001686A1 /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2E0D21B95FCF6001686A1 /* SWLongPressGestureRecognizer.m */; };
@@ -65,6 +67,10 @@
 		C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseIndicateViewController.h; sourceTree = "<group>"; };
 		C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseIndicateViewController.m; sourceTree = "<group>"; };
+		C9F1A14D1BAEFAB200AD9A47 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		C9F1A14E1BAEFAB200AD9A47 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		C9F1A1501BAEFAE500AD9A47 /* VersionUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionUpdateViewController.h; sourceTree = "<group>"; };
+		C9F1A1511BAEFAE500AD9A47 /* VersionUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionUpdateViewController.m; sourceTree = "<group>"; };
 		C9F2E0CD1B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		C9F2E0CE1B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		C9F2E0CF1B95FCF6001686A1 /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
@@ -220,6 +226,10 @@
 			children = (
 				C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */,
 				C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */,
+				C9F1A14D1BAEFAB200AD9A47 /* InfoViewController.h */,
+				C9F1A14E1BAEFAB200AD9A47 /* InfoViewController.m */,
+				C9F1A1501BAEFAE500AD9A47 /* VersionUpdateViewController.h */,
+				C9F1A1511BAEFAE500AD9A47 /* VersionUpdateViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -433,7 +443,9 @@
 				C97257741BA53CA60024D022 /* STPeripheral.m in Sources */,
 				C97257731BA53CA60024D022 /* STBleController.m in Sources */,
 				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,
+				C9F1A14F1BAEFAB200AD9A47 /* InfoViewController.m in Sources */,
 				C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */,
+				C9F1A1521BAEFAE500AD9A47 /* VersionUpdateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

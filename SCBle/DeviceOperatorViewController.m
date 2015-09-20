@@ -7,20 +7,26 @@
 //
 
 #import "DeviceOperatorViewController.h"
-#import "MSwitchView.h"
 #import "UIImage+colorImage.h"
+#import "MSwitchView.h"
 
-@interface DeviceOperatorViewController ()
+@interface DeviceOperatorViewController ()<switchViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *leftBtn;
 @property (nonatomic, weak) IBOutlet UIView *rightBtn;
 @property (nonatomic, weak) IBOutlet UIView *musicBgView;
 // 开关按钮
 @property (nonatomic, weak) IBOutlet UIButton *ligthSwitch;
+// 取色背景图
+@property (nonatomic, weak) IBOutlet UIImageView *colorPanImageView;
 
 @end
 
 @implementation DeviceOperatorViewController
+{
+    // 现在显示的彩灯or白光 yes表示彩灯，no表示白光
+    BOOL isColor;
+}
 
 - (void)viewDidLoad
 {
@@ -73,6 +79,8 @@
 {
     MSwitchView *leftSwitchView = [[[NSBundle mainBundle] loadNibNamed:@"MSwitchView" owner:self options:nil] firstObject];
     leftSwitchView.frame = self.leftBtn.bounds;
+    leftSwitchView.delegate = self;
+    leftSwitchView.isOn = NO;
     [leftSwitchView setupWithRightTitle:@"白光" leftTitle:@"彩灯"];
     [self.leftBtn addSubview:leftSwitchView];
     self.leftBtn.clipsToBounds = YES;
@@ -90,6 +98,8 @@
     
     MSwitchView *rightSwitchView = [[[NSBundle mainBundle] loadNibNamed:@"MSwitchView" owner:self options:nil] firstObject];
     rightSwitchView.frame = self.rightBtn.bounds;
+    rightSwitchView.delegate = self;
+    rightSwitchView.isOn = NO;
     [rightSwitchView setupWithRightTitle:@"律动同步" leftTitle:@"律动同步"];
     [self.rightBtn addSubview:rightSwitchView];
     self.rightBtn.clipsToBounds = YES;
@@ -105,6 +115,8 @@
     [self.rightBtn addConstraints:constraint_rV];
     [self.rightBtn addConstraints:constraint_rH];
 
+    leftSwitchView.tag = 999 + 0;
+    rightSwitchView.tag = 999 + 1;
 }
 
 - (UIView *)customNavigationTitleView:(NSString *)titleStr
@@ -121,6 +133,37 @@
 - (IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark -- 开关按钮
+- (IBAction)switchMode:(id)sender
+{
+    isColor = !isColor;
+    if (isColor) {
+//        [self.colorPanImageView setImage:[UIImage imageNamed:@"caiguang"]];
+        [self.ligthSwitch setTitle:@"OFF" forState:UIControlStateNormal];
+    }else {
+//        [self.colorPanImageView setImage:[UIImage imageNamed:@"baiguang"]];
+        [self.ligthSwitch setTitle:@"ON" forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark -- 改变显示状态
+- (void)switchViewStatuChange:(MSwitchView *)switchView
+{
+    NSInteger tag = switchView.tag - 999;
+    if (tag == 0) {
+        // 白光or彩灯
+        NSLog(@"白光or彩灯");
+        if (switchView.isOn) {
+            [self.colorPanImageView setImage:[UIImage imageNamed:@"caiguang"]];
+        }else {
+            [self.colorPanImageView setImage:[UIImage imageNamed:@"baiguang"]];
+        }
+    }else if (tag == 1) {
+        // 律动
+        NSLog(@"律动");
+    }
 }
 
 

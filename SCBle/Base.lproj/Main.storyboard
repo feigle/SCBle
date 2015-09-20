@@ -130,21 +130,21 @@
                                             <constraint firstAttribute="width" constant="229" id="f77-tD-Vaz"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_small" translatesAutoresizingMaskIntoConstraints="NO" id="2D1-QL-np7">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_small" translatesAutoresizingMaskIntoConstraints="NO" id="2D1-QL-np7">
                                         <rect key="frame" x="40" y="360" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="oZK-JZ-yEe"/>
                                             <constraint firstAttribute="height" constant="22" id="uDp-p2-PjM"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_big" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-QO-emd">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_big" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-QO-emd">
                                         <rect key="frame" x="258" y="360" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="eGF-mA-KVv"/>
                                             <constraint firstAttribute="width" constant="22" id="uwS-9c-dcL"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Go0-5d-FfJ">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liangdu_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Go0-5d-FfJ">
                                         <rect key="frame" x="40" y="340" width="240" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="044-Mg-wG9"/>
@@ -160,6 +160,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="switchMode:" destination="DNF-Gg-Esn" eventType="touchUpInside" id="KBw-do-zSJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.8666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,7 +223,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="colorPanImageView" destination="l8i-ve-7TR" id="KOu-Ru-vHc"/>
                         <outlet property="leftBtn" destination="7l6-cB-CLn" id="Xwj-XN-ovF"/>
+                        <outlet property="ligthSwitch" destination="lNg-7g-kfS" id="Y0e-LR-71n"/>
                         <outlet property="musicBgView" destination="hn1-Rh-PLA" id="Lco-XE-Qiz"/>
                         <outlet property="rightBtn" destination="Ax1-LM-2hG" id="uiI-qe-9kM"/>
                     </connections>
@@ -435,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="1323.5" y="1728.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="DNu-bd-7ye">
             <objects>
-                <viewController id="ypg-Mc-ffa" sceneMemberID="viewController">
+                <viewController id="ypg-Mc-ffa" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NqN-OL-FzX"/>
                         <viewControllerLayoutGuide type="bottom" id="T3I-yi-FNP"/>
@@ -454,10 +459,10 @@
             </objects>
             <point key="canvasLocation" x="1299.5" y="971.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Version Update View Controller-->
         <scene sceneID="vCb-Ud-lTu">
             <objects>
-                <viewController id="QNM-vt-4ls" sceneMemberID="viewController">
+                <viewController id="QNM-vt-4ls" customClass="VersionUpdateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4cN-fn-PDu"/>
                         <viewControllerLayoutGuide type="bottom" id="vlx-8U-evD"/>
@@ -471,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFb-TM-pLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.5" y="1898.5"/>
+            <point key="canvasLocation" x="838.5" y="2000.5"/>
         </scene>
     </scenes>
     <resources>

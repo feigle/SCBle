@@ -88,11 +88,14 @@
     STPeripheral *peripheral = [self.devices objectAtIndex:tag];
     if (!peripheral.isConnected) {
         [bleController didConnect:peripheral];
-//        [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
+        peripheral.isConnected = YES;
+        [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
         [bleController didDisconnect:peripheral];
-//        [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
+        peripheral.isConnected = NO;
+        [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
     }
+    [self.devicesView reloadData];
 }
 
 #pragma mark -- STBleCommProtocol
@@ -170,9 +173,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DeviceOperatorViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DeviceOperatorIdentify"];
-    [self.navigationController pushViewController:vc animated:YES];
+    STPeripheral *peripheral = [self.devices objectAtIndex:indexPath.row];
+    if (!peripheral.isConnected) {
+        // show alert view
+        [self showAlert:@"设备未配对，先配对在继续操作"];
+    }else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        DeviceOperatorViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DeviceOperatorIdentify"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (NSArray *)rightButtons
@@ -189,6 +198,13 @@
                                                 icon:[UIImage imageNamed:@"cehua_shanchu"]];
     
     return rightUtilityButtons;
+}
+
+#pragma mark -- 显示提示框
+- (void)showAlert:(NSString *)alertMsg
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:alertMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark - SWTableViewDelegate

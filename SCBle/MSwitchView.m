@@ -82,6 +82,9 @@
     }else {
         self.isOn = YES;
     }
+    if ([self.delegate respondsToSelector:@selector(switchViewStatuChange:)]) {
+        [self.delegate switchViewStatuChange:self];
+    }
 }
 
 - (void)setIsOn:(BOOL)isOn
