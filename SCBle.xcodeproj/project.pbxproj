@@ -83,7 +83,7 @@
 		C9F2E0D61B95FCF6001686A1 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
 		C9F2E0D71B95FCF6001686A1 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		C9F2E0D81B95FCF6001686A1 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
-		FEBD920F1B8CAD550099C140 /* SCBle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBD920F1B8CAD550099C140 /* 蓝牙灯控-beta1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "蓝牙灯控-beta1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD92131B8CAD550099C140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBD92141B8CAD550099C140 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEBD92161B8CAD550099C140 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		FEBD92101B8CAD550099C140 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEBD920F1B8CAD550099C140 /* SCBle.app */,
+				FEBD920F1B8CAD550099C140 /* 蓝牙灯控-beta1.0.app */,
 				FEBD92281B8CAD550099C140 /* SCBleTests.xctest */,
 			);
 			name = Products;
@@ -341,7 +341,7 @@
 			);
 			name = SCBle;
 			productName = SCBle;
-			productReference = FEBD920F1B8CAD550099C140 /* SCBle.app */;
+			productReference = FEBD920F1B8CAD550099C140 /* 蓝牙灯控-beta1.0.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FEBD92271B8CAD550099C140 /* SCBleTests */ = {
@@ -504,7 +504,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -521,9 +522,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "蓝牙灯控-beta1.0";
+				PROVISIONING_PROFILE = "1d546e68-9176-418d-a7df-c7482a481a06";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,7 +549,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -557,8 +561,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "蓝牙灯控-beta1.0";
+				PROVISIONING_PROFILE = "1d546e68-9176-418d-a7df-c7482a481a06";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -569,10 +575,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
 				INFOPLIST_FILE = SCBle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "蓝牙灯控-beta1.0";
+				PROVISIONING_PROFILE = "1d546e68-9176-418d-a7df-c7482a481a06";
 			};
 			name = Debug;
 		};
@@ -580,10 +588,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Itron Electronics Co., Ltd.";
 				INFOPLIST_FILE = SCBle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "蓝牙灯控-beta1.0";
+				PROVISIONING_PROFILE = "1d546e68-9176-418d-a7df-c7482a481a06";
 			};
 			name = Release;
 		};
