@@ -72,7 +72,7 @@
 {
     self.rightTitle = rTitle;
     self.leftTitle = lTitle;
-    self.textLabel.text = self.rightTitle;
+    self.textLabel.text = lTitle;
 }
 
 - (IBAction)switchClick:(id)sender

@@ -18,6 +18,7 @@
 		C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA1B71B99689700F63AD1 /* UIImage+colorImage.m */; };
 		C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */; };
 		C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */; };
+		C9CEBDFD1BB1AFBD00E97285 /* MusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEBDFC1BB1AFBD00E97285 /* MusicPlayViewController.m */; };
 		C9F1A14F1BAEFAB200AD9A47 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A14E1BAEFAB200AD9A47 /* InfoViewController.m */; };
 		C9F1A1521BAEFAE500AD9A47 /* VersionUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A1511BAEFAE500AD9A47 /* VersionUpdateViewController.m */; };
 		C9F2E0D91B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2E0CE1B95FCF6001686A1 /* NSMutableArray+SWUtilityButtons.m */; };
@@ -67,6 +68,8 @@
 		C9BFD56B1B948ADD00D08E55 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		C9BFD56D1B94942D00D08E55 /* UseIndicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseIndicateViewController.h; sourceTree = "<group>"; };
 		C9BFD56E1B94942D00D08E55 /* UseIndicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseIndicateViewController.m; sourceTree = "<group>"; };
+		C9CEBDFB1BB1AFBD00E97285 /* MusicPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayViewController.h; sourceTree = "<group>"; };
+		C9CEBDFC1BB1AFBD00E97285 /* MusicPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayViewController.m; sourceTree = "<group>"; };
 		C9F1A14D1BAEFAB200AD9A47 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		C9F1A14E1BAEFAB200AD9A47 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		C9F1A1501BAEFAE500AD9A47 /* VersionUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionUpdateViewController.h; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 		C991D29C1B92EDF8007897CA /* DeviceOperatorViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C9CEBDFA1BB1AF9C00E97285 /* MusicPlayViewController */,
 				C941A6291B932C0000A62683 /* views */,
 				C991D29D1B92EE5C007897CA /* DeviceOperatorViewController.h */,
 				C991D29E1B92EE5C007897CA /* DeviceOperatorViewController.m */,
@@ -232,6 +236,15 @@
 				C9F1A1511BAEFAE500AD9A47 /* VersionUpdateViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C9CEBDFA1BB1AF9C00E97285 /* MusicPlayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9CEBDFB1BB1AFBD00E97285 /* MusicPlayViewController.h */,
+				C9CEBDFC1BB1AFBD00E97285 /* MusicPlayViewController.m */,
+			);
+			name = MusicPlayViewController;
 			sourceTree = "<group>";
 		};
 		C9F2E0CB1B95FCB8001686A1 /* vendor */ = {
@@ -435,6 +448,7 @@
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
 				C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */,
 				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
+				C9CEBDFD1BB1AFBD00E97285 /* MusicPlayViewController.m in Sources */,
 				C9F2E0DA1B95FCF6001686A1 /* SWCellScrollView.m in Sources */,
 				C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,

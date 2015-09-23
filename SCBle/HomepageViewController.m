@@ -56,9 +56,9 @@
     [super viewWillAppear:animated];
     
     [self.navigationController.navigationBar
-     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]]
+     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:252.0/255.0 green:252.0/255.0 blue:252.0/255.0 alpha:1]]
      forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor lightGrayColor]];
+    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor whiteColor]];
 }
 
 // 自定义导航栏标题视图

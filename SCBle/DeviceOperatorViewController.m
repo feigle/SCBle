@@ -41,10 +41,13 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
-    [self.navigationController.navigationBar
-     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]]
-     forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]];
+    // 更换返回按钮背景按钮图片
+    UIImage *backButtonImage = [[UIImage imageNamed:@"icon_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    UIBarButtonItem *backBarItem = [[UIBarButtonItem alloc] init];
+    backBarItem.title = @"";
+    [backBarItem setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [backBarItem setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0) forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.backBarButtonItem = backBarItem;
 }
 
 // 自定义导航栏标题视图
@@ -63,6 +66,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar
+     setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]]
+     forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -100,7 +107,7 @@
     rightSwitchView.frame = self.rightBtn.bounds;
     rightSwitchView.delegate = self;
     rightSwitchView.isOn = NO;
-    [rightSwitchView setupWithRightTitle:@"律动同步" leftTitle:@"律动同步"];
+    [rightSwitchView setupWithRightTitle:@"       " leftTitle:@"律动同步"];
     [self.rightBtn addSubview:rightSwitchView];
     self.rightBtn.clipsToBounds = YES;
     NSArray *constraint_rV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[rightSwitchView]-0-|"
