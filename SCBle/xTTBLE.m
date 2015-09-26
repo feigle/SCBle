@@ -1,3 +1,4 @@
+
 //
 //  xTTBLE.m
 //  BluetoothPlayer
@@ -19,11 +20,18 @@
 - (id)init {
     self = [super init];  // Call a designated initializer here.
     if (self) {
-        _manager    = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+//        _manager    = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+
+    static dispatch_queue_t myQueue;
+    if(!myQueue) {
+        //        myQueue = dispatch_queue_create("aps.processUpgrade.queue",nil);
+        myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        _manager = [[CBCentralManager alloc] initWithDelegate:(id<CBCentralManagerDelegate>)self queue:myQueue];
+    }
+
         _nDevices   = [[NSMutableArray alloc] init];
         BLEobj      = [[xTTBLEdata alloc] init];
         _isConnect  = NO;
-//        _nWriteCharacteristics = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -37,6 +45,17 @@
     return xTTble;
 }
 
+-(void)open
+{
+    
+//    static dispatch_queue_t myQueue;
+//    if(!myQueue) {
+//        //        myQueue = dispatch_queue_create("aps.processUpgrade.queue",nil);
+//        myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//        _manager = [[CBCentralManager alloc] initWithDelegate:(id<CBCentralManagerDelegate>)self queue:myQueue];
+//    }
+}
+
 //开始查看服务，蓝牙开启
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
@@ -44,7 +63,7 @@
         case CBCentralManagerStatePoweredOn:
 //            [[LKLoadingCenter defaultCenter] postLoadingWithTitle:@"正在扫描蓝牙音箱"
 //                                                          message:nil ignoreTouch:NO];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"BLEPoweredOn" object:nil];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"BLEPoweredOn" object:nil];
             NSLog(@"蓝牙已打开,请扫描外设");
             break;
         default:
@@ -61,8 +80,8 @@
 
 - (void)scanClick
 {
-    [_manager stopScan];
-    [_manager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
+//    [_manager stopScan];
+    [_manager scanForPeripheralsWithServices:nil options:nil];
 
     NSLog(@"正在扫描外设...");
 }
@@ -70,19 +89,28 @@
 //查到外设后，停止扫描
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
+    
+    NSLog(@"Did discover peripheral %@", peripheral.name);
+
     if (![_nDevices containsObject:peripheral]) {
+        
         [_nDevices addObject:peripheral];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"scan_OK" object:nil];
+        
+        if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(discoverDevice:)]) {
+            
+            [self. DataDelegate discoverDevice:_nDevices];
+        }
+        
     }
 }
 
 -(void)connectClick:(CBPeripheral *)peripheral
 {
     _isConnect = NO;
-    if (_peripheral && _peripheral.state == CBPeripheralStateDisconnected) {
-        [_manager cancelPeripheralConnection:_peripheral];
+    if (self.myCurrentPeri && self.myCurrentPeri.state == CBPeripheralStateDisconnected) {
+        [_manager cancelPeripheralConnection:self.myCurrentPeri];
     }
-    _peripheral = nil;
+    self.myCurrentPeri = nil;
 
     [_manager stopScan];
     [_manager connectPeripheral:peripheral options:nil];
@@ -106,29 +134,29 @@
             [timeOut invalidate];
             timeOut = nil;
         }
-        if (_peripheral) {
-            [_manager cancelPeripheralConnection:_peripheral];
-            _peripheral = nil;
+        if (self.myCurrentPeri) {
+            [_manager cancelPeripheralConnection:self.myCurrentPeri];
+            self.myCurrentPeri = nil;
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(NO)];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(NO)];
     }
 }
 
 //连接外设成功，开始发现服务
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     NSLog(@"%@",[NSString stringWithFormat:@"成功连接 peripheral: %@ with UUID: %@",peripheral,peripheral.identifier]);
-    _peripheral = peripheral;
+    self.myCurrentPeri = peripheral;
     
-    [_peripheral setDelegate:self];
-    [_peripheral discoverServices:nil];
+    [self.myCurrentPeri setDelegate:self];
+    [self.myCurrentPeri discoverServices:nil];
     NSLog(@"扫描服务");
 }
 
 //连接外设失败
 -(void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    NSLog(@"%@",error);
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(NO)];
+    NSLog(@"连接外设失败 %@",error);
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(NO)];
 }
 
 //已发现服务,开始发现特征
@@ -194,8 +222,8 @@
                 timeOut = nil;
             }
             if (!_isConnect) {
-                [_manager cancelPeripheralConnection:_peripheral];
-                _peripheral = nil;
+                [_manager cancelPeripheralConnection:self.myCurrentPeri];
+                self.myCurrentPeri = nil;
             }
             [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(_isConnect)];
         }else{
@@ -209,7 +237,7 @@
 
 - (void)sendBLEuserData:(NSString *)userData type:(SPP_Command)type
 {
-    if (self.peripheral.state != CBPeripheralStateConnected) {
+    if (self.myCurrentPeri.state != CBPeripheralStateConnected) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"连接断开", nil) message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [xTTPlayer getPlayerObj].BLEplay.signal = 10;
@@ -262,7 +290,7 @@
 {
     NSLog(@"send data ====== %@",data);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"sendData" object:data];
-    [_peripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithResponse];
+    [self.myCurrentPeri writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithResponse];
 }
 
 //用于检测中心向外设写数据是否成功
@@ -271,7 +299,7 @@
     if (error) {
         NSLog(@"%@",[NSString stringWithFormat:@"特征 UUID: %@ (%@) %@",characteristic.UUID.data,characteristic.UUID,characteristic.value]);
         NSLog(@"=======%@",error.userInfo);
-        if (![xTTBLE getBLEObj].peripheral || [xTTBLE getBLEObj].peripheral.state == CBPeripheralStateDisconnected){
+        if (![xTTBLE getBLEObj].myCurrentPeri || [xTTBLE getBLEObj].myCurrentPeri.state == CBPeripheralStateDisconnected){
             [[xTTBLE getBLEObj] scanClick];
         }
     }else{

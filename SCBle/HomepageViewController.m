@@ -13,6 +13,7 @@
 #import "STBleController.h"
 #import "STPeripheral.h"
 
+
 @interface HomepageViewController ()<SWTableViewCellDelegate, STBleCommProtocol>
 
 // 设备列表
@@ -26,6 +27,7 @@
 {
     // 蓝牙连接管理器
     STBleController *bleController;
+    xTTBLE * BTTController;
 }
 
 - (void)viewDidLoad
@@ -44,10 +46,14 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(scanDevices:)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    // 初始化蓝牙管理控制器
-    bleController = [STBleController getInstance];
-    bleController.dataDelegate = self;
-    [bleController open];
+//    // 初始化蓝牙管理控制器
+//    bleController = [STBleController getInstance];
+//    bleController.dataDelegate = self;
+//    [bleController open];
+    
+    BTTController = [xTTBLE getBLEObj];
+    BTTController.DataDelegate = self;
+
 
 }
 
@@ -77,7 +83,8 @@
 #pragma mark -- 搜索设备
 - (void)scanDevices:(id)sender
 {
-    [[STBleController getInstance] searchDevices];
+//    [[STBleController getInstance] searchDevices];
+        [BTTController scanClick];
 }
 
 
@@ -85,14 +92,14 @@
 - (IBAction)switchDeviceItem:(UIButton *)sender
 {
     NSInteger tag = sender.tag - 1000;
-    STPeripheral *peripheral = [self.devices objectAtIndex:tag];
-    if (!peripheral.isConnected) {
-        [bleController didConnect:peripheral];
-        peripheral.isConnected = YES;
+    CBPeripheral *peripheral = [self.devices objectAtIndex:tag];
+    if (BTTController.isConnected) {
+        [BTTController connectClick:peripheral];
+//        peripheral.isConnected = YES;
         [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
-        [bleController didDisconnect:peripheral];
-        peripheral.isConnected = NO;
+        [BTTController.manager cancelPeripheralConnection:peripheral];
+        BTTController.isConnected = NO;
         [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
     }
     [self.devicesView reloadData];

@@ -109,7 +109,6 @@
 - (void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     NSLog(@"Did discover peripheral %@", peripheral.name);
-    NSLog(@"uuid == %@", peripheral.UUID);
     
     for (STPeripheral *stPe in deviceList) {
         if(stPe.DPeripheral == peripheral) {
