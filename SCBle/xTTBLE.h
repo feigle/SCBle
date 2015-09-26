@@ -29,7 +29,9 @@
     NSTimer *timeOut;
 }
 
+// 蓝牙连接管理器
 @property (nonatomic, strong) CBCentralManager *manager;
+// 当前设备
 @property (nonatomic, strong) CBPeripheral *myCurrentPeri;
 @property (nonatomic, assign) id<STBleCommProtocol> DataDelegate;
 @property (strong,nonatomic) NSMutableArray *nDevices;
