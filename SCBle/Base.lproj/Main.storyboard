@@ -458,7 +458,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bgScrollView" destination="2qQ-YM-g0w" id="zEp-EA-m3E"/>
                         <outlet property="leadingConstraint" destination="LAY-VN-Owv" id="Znh-tr-8h2"/>
+                        <outlet property="leftMusicList" destination="FVm-9G-AE5" id="aFj-Q5-uXx"/>
+                        <outlet property="rightMusicList" destination="gZk-pj-Xwh" id="PY7-Bt-Qqz"/>
                         <outlet property="trailingConstraint" destination="Ac4-ql-QR3" id="dSO-50-TFr"/>
                     </connections>
                 </viewController>
