@@ -83,8 +83,7 @@
 #pragma mark -- 搜索设备
 - (void)scanDevices:(id)sender
 {
-//    [[STBleController getInstance] searchDevices];
-        [BTTController scanClick];
+    [BTTController scanClick];
 }
 
 
@@ -93,14 +92,10 @@
 {
     NSInteger tag = sender.tag - 1000;
     CBPeripheral *peripheral = [self.devices objectAtIndex:tag];
-    if (!BTTController.isConnected) {
+    if (peripheral.state == CBPeripheralStateDisconnected) {
         [BTTController connectClick:peripheral];
-        BTTController.isConnected = YES;
-        [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
         [BTTController.manager cancelPeripheralConnection:peripheral];
-        BTTController.isConnected = NO;
-        [sender setImage:[UIImage imageNamed:@"kaiguan_close"] forState:UIControlStateNormal];
     }
     [self.devicesView reloadData];
 }
@@ -124,7 +119,7 @@
 //连接成功，可以发送数据
 - (void)connectOK
 {
-    NSLog(@"connectOK");
+    [self.devicesView reloadData];
 }
 
 //连接丢失
@@ -168,7 +163,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DeviceStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceStatusCell"];
-    STPeripheral *device = [self.devices objectAtIndex:indexPath.row];
+    CBPeripheral *device = [self.devices objectAtIndex:indexPath.row];
     [cell fillCellWithDeviceInfo:device withTag:indexPath.row];
     
     [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:58.0f];
@@ -181,7 +176,6 @@
 {
     CBPeripheral *peripheral = [self.devices objectAtIndex:indexPath.row];
     if (peripheral.state == CBPeripheralStateDisconnected) {
-        // show alert view
 //        [self showAlert:@"设备未配对，先配对在继续操作"];
         [BTTController connectClick:peripheral];
     }else {

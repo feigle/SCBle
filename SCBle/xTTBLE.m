@@ -186,8 +186,9 @@
         {
             _writeCharacteristic = c;
             if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(connectOK)]) {
-                
-                [self. DataDelegate connectOK];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self. DataDelegate connectOK];
+                });                
             }
 
             [self performSelector:@selector(configurationDeivce) withObject:nil afterDelay:1];

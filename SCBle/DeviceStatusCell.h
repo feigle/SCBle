@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SWTableViewCell.h"
 
-@class STPeripheral;
 @interface DeviceStatusCell : SWTableViewCell
 
 // 设备状态图片
@@ -22,6 +21,6 @@
 @property (nonatomic, weak) IBOutlet UIButton *deviceStatusBtn;
 
 // 填充单元格数据
-- (void)fillCellWithDeviceInfo:(STPeripheral *)deviceInfo withTag:(NSInteger)tag;
+- (void)fillCellWithDeviceInfo:(CBPeripheral *)deviceInfo withTag:(NSInteger)tag;
 
 @end
