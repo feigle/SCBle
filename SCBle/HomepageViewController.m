@@ -93,9 +93,9 @@
 {
     NSInteger tag = sender.tag - 1000;
     CBPeripheral *peripheral = [self.devices objectAtIndex:tag];
-    if (BTTController.isConnected) {
+    if (!BTTController.isConnected) {
         [BTTController connectClick:peripheral];
-//        peripheral.isConnected = YES;
+        BTTController.isConnected = YES;
         [sender setImage:[UIImage imageNamed:@"kaiguan_open"] forState:UIControlStateNormal];
     }else {
         [BTTController.manager cancelPeripheralConnection:peripheral];
@@ -124,7 +124,7 @@
 //连接成功，可以发送数据
 - (void)connectOK
 {
-    
+    NSLog(@"connectOK");
 }
 
 //连接丢失
@@ -180,10 +180,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    STPeripheral *peripheral = [self.devices objectAtIndex:indexPath.row];
-    if (!peripheral.isConnected) {
+    CBPeripheral *peripheral = [self.devices objectAtIndex:indexPath.row];
+    if (peripheral.state == CBPeripheralStateDisconnected) {
         // show alert view
-        [self showAlert:@"设备未配对，先配对在继续操作"];
+//        [self showAlert:@"设备未配对，先配对在继续操作"];
+        [BTTController connectClick:peripheral];
     }else {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DeviceOperatorViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DeviceOperatorIdentify"];
