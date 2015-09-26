@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93D4C5B1BB64020008358C2 /* xTTBLE.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C541BB64020008358C2 /* xTTBLE.m */; };
+		C93D4C5C1BB64020008358C2 /* xTTBLEdata.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C561BB64020008358C2 /* xTTBLEdata.m */; };
+		C93D4C5D1BB64020008358C2 /* xTTBLEPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */; };
+		C93D4C5E1BB64020008358C2 /* xTTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C5A1BB64020008358C2 /* xTTPlayer.m */; };
 		C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941A6271B932BFA00A62683 /* MSwitchView.m */; };
 		C941A62B1B932C2300A62683 /* MSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941A62A1B932C2300A62683 /* MSwitchView.xib */; };
-		C97257731BA53CA60024D022 /* STBleController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97257701BA53CA60024D022 /* STBleController.m */; };
-		C97257741BA53CA60024D022 /* STPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C97257721BA53CA60024D022 /* STPeripheral.m */; };
 		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
 		C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2911B92DABD007897CA /* DeviceStatusCell.m */; };
 		C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D2991B92EAF9007897CA /* HelpViews.m */; };
@@ -47,13 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93D4C531BB64020008358C2 /* xTTBLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTBLE.h; sourceTree = "<group>"; };
+		C93D4C541BB64020008358C2 /* xTTBLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTBLE.m; sourceTree = "<group>"; };
+		C93D4C551BB64020008358C2 /* xTTBLEdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTBLEdata.h; sourceTree = "<group>"; };
+		C93D4C561BB64020008358C2 /* xTTBLEdata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTBLEdata.m; sourceTree = "<group>"; };
+		C93D4C571BB64020008358C2 /* xTTBLEPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTBLEPlayer.h; sourceTree = "<group>"; };
+		C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTBLEPlayer.m; sourceTree = "<group>"; };
+		C93D4C591BB64020008358C2 /* xTTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTPlayer.h; sourceTree = "<group>"; };
+		C93D4C5A1BB64020008358C2 /* xTTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTPlayer.m; sourceTree = "<group>"; };
 		C941A6261B932BFA00A62683 /* MSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSwitchView.h; sourceTree = "<group>"; };
 		C941A6271B932BFA00A62683 /* MSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSwitchView.m; sourceTree = "<group>"; };
 		C941A62A1B932C2300A62683 /* MSwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSwitchView.xib; sourceTree = "<group>"; };
-		C972576F1BA53CA60024D022 /* STBleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBleController.h; sourceTree = "<group>"; };
-		C97257701BA53CA60024D022 /* STBleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBleController.m; sourceTree = "<group>"; };
-		C97257711BA53CA60024D022 /* STPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPeripheral.h; sourceTree = "<group>"; };
-		C97257721BA53CA60024D022 /* STPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPeripheral.m; sourceTree = "<group>"; };
 		C991D28C1B92D9C5007897CA /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		C991D28D1B92D9C5007897CA /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
 		C991D2901B92DABD007897CA /* DeviceStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusCell.h; sourceTree = "<group>"; };
@@ -132,10 +138,14 @@
 		C972576E1BA53C740024D022 /* blueTooth */ = {
 			isa = PBXGroup;
 			children = (
-				C972576F1BA53CA60024D022 /* STBleController.h */,
-				C97257701BA53CA60024D022 /* STBleController.m */,
-				C97257711BA53CA60024D022 /* STPeripheral.h */,
-				C97257721BA53CA60024D022 /* STPeripheral.m */,
+				C93D4C531BB64020008358C2 /* xTTBLE.h */,
+				C93D4C541BB64020008358C2 /* xTTBLE.m */,
+				C93D4C551BB64020008358C2 /* xTTBLEdata.h */,
+				C93D4C561BB64020008358C2 /* xTTBLEdata.m */,
+				C93D4C571BB64020008358C2 /* xTTBLEPlayer.h */,
+				C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */,
+				C93D4C591BB64020008358C2 /* xTTPlayer.h */,
+				C93D4C5A1BB64020008358C2 /* xTTPlayer.m */,
 			);
 			name = blueTooth;
 			sourceTree = "<group>";
@@ -446,17 +456,19 @@
 				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
 				C9F2E0DD1B95FCF6001686A1 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
+				C93D4C5C1BB64020008358C2 /* xTTBLEdata.m in Sources */,
 				C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */,
 				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
+				C93D4C5D1BB64020008358C2 /* xTTBLEPlayer.m in Sources */,
 				C9CEBDFD1BB1AFBD00E97285 /* MusicPlayViewController.m in Sources */,
 				C9F2E0DA1B95FCF6001686A1 /* SWCellScrollView.m in Sources */,
 				C9BFD56F1B94942D00D08E55 /* UseIndicateViewController.m in Sources */,
 				FEBD92151B8CAD550099C140 /* main.m in Sources */,
 				C9F2E0DC1B95FCF6001686A1 /* SWTableViewCell.m in Sources */,
 				FEBD92391B8CB6FC0099C140 /* AppDelegate.m in Sources */,
-				C97257741BA53CA60024D022 /* STPeripheral.m in Sources */,
-				C97257731BA53CA60024D022 /* STBleController.m in Sources */,
 				C991D2921B92DABD007897CA /* DeviceStatusCell.m in Sources */,
+				C93D4C5E1BB64020008358C2 /* xTTPlayer.m in Sources */,
+				C93D4C5B1BB64020008358C2 /* xTTBLE.m in Sources */,
 				C9F1A14F1BAEFAB200AD9A47 /* InfoViewController.m in Sources */,
 				C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */,
 				C9F1A1521BAEFAE500AD9A47 /* VersionUpdateViewController.m in Sources */,
