@@ -1,0 +1,19 @@
+//
+//  prefix.pch
+//  SCBle
+//
+//  Created by 吗啡 on 15/9/26.
+//  Copyright (c) 2015年 ___M.T.F___. All rights reserved.
+//
+
+#ifndef SCBle_prefix_pch
+#define SCBle_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "xTTBLE.h"
+#import "xTTBLEdata.h"
+#import "xTTBLEPlayer.h"
+#import "xTTPlayer.h"
+
+#endif

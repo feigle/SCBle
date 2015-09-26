@@ -63,6 +63,7 @@
 		C93D4C601BB64529008358C2 /* STBleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBleController.m; sourceTree = "<group>"; };
 		C93D4C611BB64529008358C2 /* STPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPeripheral.h; sourceTree = "<group>"; };
 		C93D4C621BB64529008358C2 /* STPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPeripheral.m; sourceTree = "<group>"; };
+		C93D4C651BB647D0008358C2 /* prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 		C941A6261B932BFA00A62683 /* MSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSwitchView.h; sourceTree = "<group>"; };
 		C941A6271B932BFA00A62683 /* MSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSwitchView.m; sourceTree = "<group>"; };
 		C941A62A1B932C2300A62683 /* MSwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSwitchView.xib; sourceTree = "<group>"; };
@@ -336,6 +337,7 @@
 			children = (
 				FEBD92131B8CAD550099C140 /* Info.plist */,
 				FEBD92141B8CAD550099C140 /* main.m */,
+				C93D4C651BB647D0008358C2 /* prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -614,7 +616,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zewen he (7U6NBAEPBS)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				INFOPLIST_FILE = SCBle/Info.plist;
+				INFOPLIST_PREFIX_HEADER = prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "蓝牙灯控-beta1.0";
@@ -627,7 +631,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zewen he (7U6NBAEPBS)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				INFOPLIST_FILE = SCBle/Info.plist;
+				INFOPLIST_PREFIX_HEADER = prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "蓝牙灯控-beta1.0";
