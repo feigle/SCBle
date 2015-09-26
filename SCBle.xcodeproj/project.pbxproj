@@ -11,8 +11,6 @@
 		C93D4C5C1BB64020008358C2 /* xTTBLEdata.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C561BB64020008358C2 /* xTTBLEdata.m */; };
 		C93D4C5D1BB64020008358C2 /* xTTBLEPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */; };
 		C93D4C5E1BB64020008358C2 /* xTTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C5A1BB64020008358C2 /* xTTPlayer.m */; };
-		C93D4C631BB64529008358C2 /* STBleController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C601BB64529008358C2 /* STBleController.m */; };
-		C93D4C641BB64529008358C2 /* STPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C621BB64529008358C2 /* STPeripheral.m */; };
 		C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C941A6271B932BFA00A62683 /* MSwitchView.m */; };
 		C941A62B1B932C2300A62683 /* MSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C941A62A1B932C2300A62683 /* MSwitchView.xib */; };
 		C991D28E1B92D9C5007897CA /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991D28D1B92D9C5007897CA /* HomepageViewController.m */; };
@@ -59,10 +57,6 @@
 		C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTBLEPlayer.m; sourceTree = "<group>"; };
 		C93D4C591BB64020008358C2 /* xTTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTPlayer.h; sourceTree = "<group>"; };
 		C93D4C5A1BB64020008358C2 /* xTTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTPlayer.m; sourceTree = "<group>"; };
-		C93D4C5F1BB64529008358C2 /* STBleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBleController.h; sourceTree = "<group>"; };
-		C93D4C601BB64529008358C2 /* STBleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBleController.m; sourceTree = "<group>"; };
-		C93D4C611BB64529008358C2 /* STPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPeripheral.h; sourceTree = "<group>"; };
-		C93D4C621BB64529008358C2 /* STPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPeripheral.m; sourceTree = "<group>"; };
 		C93D4C651BB647D0008358C2 /* prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 		C941A6261B932BFA00A62683 /* MSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSwitchView.h; sourceTree = "<group>"; };
 		C941A6271B932BFA00A62683 /* MSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSwitchView.m; sourceTree = "<group>"; };
@@ -145,10 +139,6 @@
 		C972576E1BA53C740024D022 /* blueTooth */ = {
 			isa = PBXGroup;
 			children = (
-				C93D4C5F1BB64529008358C2 /* STBleController.h */,
-				C93D4C601BB64529008358C2 /* STBleController.m */,
-				C93D4C611BB64529008358C2 /* STPeripheral.h */,
-				C93D4C621BB64529008358C2 /* STPeripheral.m */,
 				C93D4C531BB64020008358C2 /* xTTBLE.h */,
 				C93D4C541BB64020008358C2 /* xTTBLE.m */,
 				C93D4C551BB64020008358C2 /* xTTBLEdata.h */,
@@ -468,9 +458,7 @@
 				C991D29A1B92EAF9007897CA /* HelpViews.m in Sources */,
 				C9F2E0DD1B95FCF6001686A1 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				C991D29F1B92EE5C007897CA /* DeviceOperatorViewController.m in Sources */,
-				C93D4C631BB64529008358C2 /* STBleController.m in Sources */,
 				C93D4C5C1BB64020008358C2 /* xTTBLEdata.m in Sources */,
-				C93D4C641BB64529008358C2 /* STPeripheral.m in Sources */,
 				C9BBA1B81B99689700F63AD1 /* UIImage+colorImage.m in Sources */,
 				C941A6281B932BFA00A62683 /* MSwitchView.m in Sources */,
 				C93D4C5D1BB64020008358C2 /* xTTBLEPlayer.m in Sources */,
