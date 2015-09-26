@@ -14,7 +14,7 @@
 @interface xTTBLE : NSObject<CBCentralManagerDelegate,CBPeripheralDelegate>
 {
     xTTBLEdata *BLEobj;
-    
+    // 蓝牙连接管理器
     CBCentralManager *scanManager;
     NSTimer *timeOut;
 }
