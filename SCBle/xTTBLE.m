@@ -185,6 +185,11 @@
         }else if([c.UUID.UUIDString isEqualToString:UUID_WRITE])
         {
             _writeCharacteristic = c;
+            if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(connectOK)]) {
+                
+                [self. DataDelegate connectOK];
+            }
+
             [self performSelector:@selector(configurationDeivce) withObject:nil afterDelay:1];
         }
     }
