@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35A3A7091BC50D61000BB3C0 /* ColorPickImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A3A7081BC50D61000BB3C0 /* ColorPickImageView.m */; settings = {ASSET_TAGS = (); }; };
 		C93D4C5B1BB64020008358C2 /* xTTBLE.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C541BB64020008358C2 /* xTTBLE.m */; };
 		C93D4C5C1BB64020008358C2 /* xTTBLEdata.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C561BB64020008358C2 /* xTTBLEdata.m */; };
 		C93D4C5D1BB64020008358C2 /* xTTBLEPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D4C581BB64020008358C2 /* xTTBLEPlayer.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35A3A7071BC50D61000BB3C0 /* ColorPickImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickImageView.h; sourceTree = "<group>"; };
+		35A3A7081BC50D61000BB3C0 /* ColorPickImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickImageView.m; sourceTree = "<group>"; };
 		C93D4C531BB64020008358C2 /* xTTBLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTBLE.h; sourceTree = "<group>"; };
 		C93D4C541BB64020008358C2 /* xTTBLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTTBLE.m; sourceTree = "<group>"; };
 		C93D4C551BB64020008358C2 /* xTTBLEdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTTBLEdata.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				C941A6261B932BFA00A62683 /* MSwitchView.h */,
 				C941A6271B932BFA00A62683 /* MSwitchView.m */,
 				C941A62A1B932C2300A62683 /* MSwitchView.xib */,
+				35A3A7071BC50D61000BB3C0 /* ColorPickImageView.h */,
+				35A3A7081BC50D61000BB3C0 /* ColorPickImageView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				C93D4C5B1BB64020008358C2 /* xTTBLE.m in Sources */,
 				C9F1A14F1BAEFAB200AD9A47 /* InfoViewController.m in Sources */,
 				C9BFD56C1B948ADD00D08E55 /* SettingViewController.m in Sources */,
+				35A3A7091BC50D61000BB3C0 /* ColorPickImageView.m in Sources */,
 				C9F1A1521BAEFAE500AD9A47 /* VersionUpdateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

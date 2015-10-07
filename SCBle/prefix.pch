@@ -15,5 +15,5 @@
 #import "xTTBLEdata.h"
 #import "xTTBLEPlayer.h"
 #import "xTTPlayer.h"
-
+BOOL CANSEND_COLOR;
 #endif

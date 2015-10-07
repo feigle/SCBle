@@ -35,7 +35,7 @@
 @property (nonatomic, strong) CBPeripheral *myCurrentPeri;
 @property (nonatomic, assign) id<STBleCommProtocol> DataDelegate;
 @property (strong,nonatomic) NSMutableArray *nDevices;
-@property (nonatomic, assign) BOOL isConnected;
+//@property (nonatomic, assign) BOOL isConnected;
 @property (strong ,nonatomic) CBCharacteristic *writeCharacteristic;
 
 @property (strong,nonatomic) NSMutableArray *nWriteCharacteristics;

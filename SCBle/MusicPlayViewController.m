@@ -10,7 +10,9 @@
 #import "UIImage+colorImage.h"
 
 @interface MusicPlayViewController ()<UITableViewDataSource, UITableViewDelegate>
-
+{
+    xTTBLE * CMManager;
+}
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *trailingConstraint;
 
@@ -20,39 +22,38 @@
 @property (nonatomic, weak) IBOutlet UITableView *rightMusicList;
 @property (nonatomic, weak) IBOutlet UIScrollView *bgScrollView;
 
+@property (nonatomic, assign) BOOL isPlay;
+@property (nonatomic, strong) NSMutableArray *localMusicArray;
 @end
 
 @implementation MusicPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.localMusicArray = [[NSMutableArray alloc] initWithCapacity:0];
     self.navigationItem.titleView = [self customNavigationTitleView];
-    
     self.tabBarController.tabBar.hidden = YES;
-    
-    
     //1.得到系统模式： <1106003a 00000040 0012>
     //2.得到播放状态： <11060030 00000036 0012>
     //3.切换系统模式： <11070028 00010000 300012>
 
-    xTTBLE * CMManager = [xTTBLE getBLEObj];
-    [CMManager sendBLEuserData:@"" type:BTR_GET_STDB_MODE];//得到系统工作模式
-    NSString *str = @"1106003a000000400012";
-    NSData *data = [xTTBLEdata stringToByte:str];
-    
-    NSString *str1 = @"11060030000000360012";
-    NSData *data1 = [xTTBLEdata stringToByte:str1];
+    CMManager = [xTTBLE getBLEObj];
+//    [CMManager sendBLEuserData:@"" type:BTR_GET_STDB_MODE];//得到系统工作模式
+//    NSString *str = @"1106003a000000400012";
+//    NSData *data = [xTTBLEdata stringToByte:str];
+//    
+//    NSString *str1 = @"11060030000000360012";
+//    NSData *data1 = [xTTBLEdata stringToByte:str1];
 
-    NSString *str2 = @"1107002800010000300012";
-    NSData *data2 = [xTTBLEdata stringToByte:str2];
-    [CMManager sendBLEData:data];
-    [CMManager sendBLEData:data1];
-    [CMManager sendBLEData:data2];
+//    NSString *str2 = @"1107002800010000300012";
+//    NSData *data2 = [xTTBLEdata stringToByte:str2];
+//    [CMManager sendBLEData:data];
+//    [CMManager sendBLEData:data1];
+//    [CMManager sendBLEData:data2];
 
-    NSString *str3 = @"11060001000000070012";//得到歌曲
-    NSData *data3= [xTTBLEdata stringToByte:str3];
-    [CMManager sendBLEData:data3];
+//    NSString *str3 = @"11060001000000070012";//得到歌曲
+//    NSData *data3= [xTTBLEdata stringToByte:str3];
+//    [CMManager sendBLEData:data3];
 //
 //    NSString *str4 = @"1105002d0255890012";//设置当前播放音量
 //    NSData *data4= [xTTBLEdata stringToByte:str4];
@@ -94,6 +95,32 @@
         self.leadingConstraint.priority = UILayoutPriorityDefaultHigh;
         self.trailingConstraint.priority = UILayoutPriorityDefaultLow;
         [self.bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+        //播放本地音乐
+        if (CMManager.isConnect){
+            
+            MPMediaPickerController * mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+            if(mediaPicker != nil)
+            {
+                NSLog(@"Successfully instantiated a media picker");
+                mediaPicker.delegate = self;
+                mediaPicker.allowsPickingMultipleItems = YES;
+                [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:mediaPicker animated:YES completion:nil];
+                self.isPlay = true;
+            }
+            else
+            {
+                NSLog(@"Could not instantiate a media picker");
+            }
+            
+
+        }
+        else
+        {
+//            [CMManager getA2DPstate];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请先配置蓝牙连接" message:@"" delegate:nil cancelButtonTitle:@"" otherButtonTitles:@"确定", nil];
+            [alertView show];
+        }
+        
     }else {
         self.leadingConstraint.priority = UILayoutPriorityDefaultLow;
         self.trailingConstraint.priority = UILayoutPriorityDefaultHigh;
@@ -123,6 +150,17 @@
 - (IBAction)playMusic:(id)sender
 {
     NSLog(@"play music");
+    if (self.isPlay) {
+        [self.myMusicPlayer pause];
+        self.isPlay = false;
+
+    }else
+    {
+
+        [self.myMusicPlayer play];
+        self.isPlay = true;
+    }
+    
 }
 
 #pragma mark -- 下一首
@@ -151,7 +189,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    if (tableView == self.leftMusicList) {
+        return  [self.localMusicArray count];
+    }else
+        return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -162,13 +203,111 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musicCell"];
-    cell.textLabel.text = @"王妃";
+    if ([self.localMusicArray count]>0 && tableView == self.leftMusicList) {
+        cell.textLabel.text = [self.localMusicArray objectAtIndex:indexPath.row];
+
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+//------------
+- (IBAction)reback:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+-(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
+{
+    
+    
+    for (MPMediaItem *item in [mediaItemCollection items]) {
+        NSLog(@"item == %@, item==%@", item.title,item);//获取本地歌曲名字
+        [self.localMusicArray addObject:item.title];
+        
+        
+    }
+    //此处需要更新tableview
+    [self.leftMusicList reloadData];
+    NSLog(@"Media Picker returned");
+    self.myMusicPlayer = nil;
+    self.myMusicPlayer = [[MPMusicPlayerController alloc] init];
+    [self.myMusicPlayer beginGeneratingPlaybackNotifications];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicPlayerStatedChanged:) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:self.myMusicPlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nowPlayingItemIsChanged:) name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:self.myMusicPlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeIsChanged:) name:MPMusicPlayerControllerVolumeDidChangeNotification object:self.myMusicPlayer];
+    
+    [self.myMusicPlayer setQueueWithItemCollection:mediaItemCollection];
+    
+    [self.myMusicPlayer play];
+    
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+-(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
+{
+    NSLog(@"Media Picker was cancelled");
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)musicPlayerStatedChanged:(NSNotification *)paramNotification
+{
+    NSLog(@"Player State Changed");
+    NSNumber * stateAsObject = [paramNotification.userInfo objectForKey:@"MPMusicPlayerControllerPlaybackStateKey"];
+    NSInteger state = [stateAsObject integerValue];
+    switch (state) {
+        case MPMusicPlaybackStateStopped:
+            
+            break;
+        case MPMusicPlaybackStatePlaying:
+            break;
+            
+        case MPMusicPlaybackStatePaused:
+            break;
+        case MPMusicPlaybackStateInterrupted:
+            break;
+        case MPMusicPlaybackStateSeekingForward:
+            break;
+        case MPMusicPlaybackStateSeekingBackward:
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)nowPlayingItemIsChanged:(NSNotification *)paramNotification
+{
+    NSLog(@"Playing Item is Changed");
+    NSString * persistentID = [paramNotification.userInfo objectForKey:@"MPMusicPlayerControllerNowPlayingItemPersistentIDKey"];
+    NSLog(@"Persistent ID = %@",persistentID);
+    
+}
+
+-(void)volumeIsChanged:(NSNotification *)paramNotification
+{
+    NSLog(@"Volume Is Changed");
+}
+
+- (IBAction)stopPlay:(id)sender {
+    
+    if(self.myMusicPlayer != nil)
+    {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:self.myMusicPlayer];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:self.myMusicPlayer];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMusicPlayerControllerVolumeDidChangeNotification object:self.myMusicPlayer];
+        
+        [self.myMusicPlayer stop];
+    }
+    
 }
 
 

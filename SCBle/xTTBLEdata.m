@@ -682,6 +682,7 @@
         case 40://自定义命令
         {
             NSLog(@"自定义命令");
+            CANSEND_COLOR = true;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_USERDEFINE" object:nil];
         }
             break;

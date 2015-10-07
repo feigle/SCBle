@@ -26,6 +26,7 @@
 {
     // 现在显示的彩灯or白光 yes表示彩灯，no表示白光
     BOOL isColor;
+    xTTBLE * CMManager;
 }
 
 - (void)viewDidLoad
@@ -41,6 +42,11 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
+    // 初始化蓝颜控制类
+    CMManager = [xTTBLE getBLEObj];
+    
+    // 获取颜色
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeColor:) name:@"GET_IMAGECOLOR_SUCCESS" object:nil];
     // 更换返回按钮背景按钮图片
     UIImage *backButtonImage = [[UIImage imageNamed:@"icon_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     UIBarButtonItem *backBarItem = [[UIBarButtonItem alloc] init];
@@ -142,6 +148,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)changeColor:(NSNotification *)notification
+{
+//    CANSEND_COLOR = true;
+    if(CANSEND_COLOR)
+    {
+        NSString *object = (NSString *)notification.object;
+        [CMManager sendBLEuserData:object type:BTR_USERDEFINE];
+        CANSEND_COLOR = true;
+    }
+}
+
 #pragma mark -- 开关按钮
 - (IBAction)switchMode:(id)sender
 {
@@ -149,9 +166,13 @@
     if (isColor) {
 //        [self.colorPanImageView setImage:[UIImage imageNamed:@"caiguang"]];
         [self.ligthSwitch setTitle:@"OFF" forState:UIControlStateNormal];
+        // 关灯
+        [CMManager sendBLEuserData:@"0000" type:BTR_USERDEFINE];
     }else {
 //        [self.colorPanImageView setImage:[UIImage imageNamed:@"baiguang"]];
         [self.ligthSwitch setTitle:@"ON" forState:UIControlStateNormal];
+        // 开灯
+        [CMManager sendBLEuserData:@"0001" type:BTR_USERDEFINE];
     }
 }
 
@@ -163,13 +184,24 @@
         // 白光or彩灯
         NSLog(@"白光or彩灯");
         if (switchView.isOn) {
+            // 设置彩灯模式
+            [CMManager sendBLEuserData:@"0400040464" type:BTR_USERDEFINE];
             [self.colorPanImageView setImage:[UIImage imageNamed:@"caiguang"]];
         }else {
+            // 设置白光模式
+            [CMManager sendBLEuserData:@"04285F5016" type:BTR_USERDEFINE];
             [self.colorPanImageView setImage:[UIImage imageNamed:@"baiguang"]];
         }
     }else if (tag == 1) {
         // 律动
         NSLog(@"律动");
+        if (switchView.isOn) {
+            // 开启律动模式
+            [CMManager sendBLEuserData:@"060000" type:BTR_USERDEFINE];
+        }else {
+            // 关闭律动模式
+            [CMManager sendBLEuserData:@"060001" type:BTR_USERDEFINE];
+        }
     }
 }
 

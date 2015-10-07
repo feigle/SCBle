@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface MusicPlayViewController : UIViewController<UIScrollViewDelegate>
+@interface MusicPlayViewController : UIViewController<UIScrollViewDelegate,MPMediaPickerControllerDelegate>
+
+@property (nonatomic,strong) MPMusicPlayerController * myMusicPlayer;
 
 @end
