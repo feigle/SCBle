@@ -14,8 +14,11 @@
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *leadingConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *trailingConstraint;
 
+// 本地音乐列表
 @property (nonatomic, weak) IBOutlet UITableView *leftMusicList;
+// 卡片音乐列表
 @property (nonatomic, weak) IBOutlet UITableView *rightMusicList;
+@property (nonatomic, weak) IBOutlet UIScrollView *bgScrollView;
 
 @end
 
@@ -88,11 +91,13 @@
 {
     [self.view setNeedsLayout];
     if (0 == index) {
-            self.leadingConstraint.priority = UILayoutPriorityDefaultHigh;
-            self.trailingConstraint.priority = UILayoutPriorityDefaultLow;
+        self.leadingConstraint.priority = UILayoutPriorityDefaultHigh;
+        self.trailingConstraint.priority = UILayoutPriorityDefaultLow;
+        [self.bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     }else {
-            self.leadingConstraint.priority = UILayoutPriorityDefaultLow;
-            self.trailingConstraint.priority = UILayoutPriorityDefaultHigh;
+        self.leadingConstraint.priority = UILayoutPriorityDefaultLow;
+        self.trailingConstraint.priority = UILayoutPriorityDefaultHigh;
+        [self.bgScrollView setContentOffset:CGPointMake(self.view.frame.size.width, 0) animated:YES];
     }
     // 增加动画效果
     [UIView animateWithDuration:0.25 animations:^{
