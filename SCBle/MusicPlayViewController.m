@@ -27,6 +27,37 @@
     self.navigationItem.titleView = [self customNavigationTitleView];
     
     self.tabBarController.tabBar.hidden = YES;
+    
+    
+    //1.得到系统模式： <1106003a 00000040 0012>
+    //2.得到播放状态： <11060030 00000036 0012>
+    //3.切换系统模式： <11070028 00010000 300012>
+
+    xTTBLE * CMManager = [xTTBLE getBLEObj];
+    [CMManager sendBLEuserData:@"" type:BTR_GET_STDB_MODE];//得到系统工作模式
+    NSString *str = @"1106003a000000400012";
+    NSData *data = [xTTBLEdata stringToByte:str];
+    
+    NSString *str1 = @"1106003000000036001";
+    NSData *data1 = [xTTBLEdata stringToByte:str1];
+
+    NSString *str2 = @"1107002800010000300012";
+    NSData *data2 = [xTTBLEdata stringToByte:str2];
+    [CMManager sendBLEData:data];
+    [CMManager sendBLEData:data1];
+    [CMManager sendBLEData:data2];
+
+    NSString *str3 = @"11060001000000070012";//得到歌曲
+    NSData *data3= [xTTBLEdata stringToByte:str3];
+    [CMManager sendBLEData:data3];
+//
+//    NSString *str4 = @"1105002d0255890012";//设置当前播放音量
+//    NSData *data4= [xTTBLEdata stringToByte:str4];
+//    [CMManager sendBLEData:data4];
+
+    
+
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

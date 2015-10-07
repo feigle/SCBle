@@ -89,19 +89,34 @@
 //查到外设后，停止扫描
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    
+    BOOL flag = false;
     NSLog(@"Did discover peripheral %@", peripheral.name);
-
-    if (![_nDevices containsObject:peripheral]) {
-        
+    for (CBPeripheral *cp in _nDevices) {
+        if (cp ==  peripheral) {
+            flag = true;
+            break;
+        }
+    }
+    if (!false) {
         [_nDevices addObject:peripheral];
         
         if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(discoverDevice:)]) {
             
             [self. DataDelegate discoverDevice:_nDevices];
         }
-        
+
     }
+    
+//    if (![_nDevices containsObject:peripheral]) {
+//        
+//        [_nDevices addObject:peripheral];
+//        
+//        if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(discoverDevice:)]) {
+//            
+//            [self. DataDelegate discoverDevice:_nDevices];
+//        }
+//        
+//    }
 }
 
 -(void)connectClick:(CBPeripheral *)peripheral
@@ -185,13 +200,14 @@
         }else if([c.UUID.UUIDString isEqualToString:UUID_WRITE])
         {
             _writeCharacteristic = c;
+//            [self performSelector:@selector(configurationDeivce) withObject:nil afterDelay:1];
+            [self performSelectorInBackground:@selector(configurationDeivce) withObject:nil];
             if (self.DataDelegate && [self.DataDelegate respondsToSelector:@selector(connectOK)]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self. DataDelegate connectOK];
                 });                
             }
 
-            [self performSelector:@selector(configurationDeivce) withObject:nil afterDelay:1];
         }
     }
 }
@@ -204,7 +220,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     NSLog(@"read = %@",characteristic.value);
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"readData" object:characteristic.value];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"readData" object:characteristic.value];
     
     if (characteristic.value.length > 5 && _writeCharacteristic) {
         [self getBLEDataWithValue:characteristic.value];
@@ -231,7 +247,7 @@
                 [_manager cancelPeripheralConnection:self.myCurrentPeri];
                 self.myCurrentPeri = nil;
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(_isConnect)];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"connect_OK" object:@(_isConnect)];
         }else{
             [BLEobj setBELData:value];
             [BLEobj processBELData];
@@ -243,14 +259,16 @@
 
 - (void)sendBLEuserData:(NSString *)userData type:(SPP_Command)type
 {
+    
+    
     if (self.myCurrentPeri.state != CBPeripheralStateConnected) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"连接断开", nil) message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"连接断开", nil) message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alertView show];
         [xTTPlayer getPlayerObj].BLEplay.signal = 10;
         [xTTPlayer getPlayerObj].BLEplay.voltage = 0;
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_GET_BT_SIGNAL" object:nil];
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_GET_VOLTAGE" object:nil];
-        return;
+//        return;
     }
     NSString *tmp;
     int length  = 100;

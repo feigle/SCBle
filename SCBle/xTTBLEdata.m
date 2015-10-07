@@ -296,8 +296,8 @@
     switch ([_arrCommand indexOfObject:_dMLBM] + 1) {
         case 1://切换系统工作模式
         {
-            AppDelegate *app = [UIApplication sharedApplication].delegate;
-            UITabBarController *tab = (UITabBarController *)app.window.rootViewController;
+//            AppDelegate *app = [UIApplication sharedApplication].delegate;
+//            UITabBarController *tab = (UITabBarController *)app.window.rootViewController;
 
             NSLog(@"切换系统工作模式 : %@",_dYHSJ);
             if ([_dYHSJ isEqual:@"00"]) {
@@ -314,27 +314,27 @@
                 [xTTPlayer getPlayerObj].playerVCType = UdiskVCType;
                 [[xTTPlayer getPlayerObj].BLEplay loadUserEQ];
                 [[xTTPlayer getPlayerObj].BLEplay sendUserEq];
-                UINavigationController *VC1 = tab.viewControllers[1];
+//                UINavigationController *VC1 = tab.viewControllers[1];
 //                [(WirelessNetworkcardViewController *)VC1.topViewController deleteNOT];
-                tab.selectedIndex = 2;
+//                tab.selectedIndex = 2;
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_SWITCH_MODE" object:_dYHSJ];
             }else if ([_dYHSJ isEqual:@"03"]){
                 [xTTPlayer getPlayerObj].playerVCType = TcardVCType;
                 [[xTTPlayer getPlayerObj].BLEplay loadUserEQ];
                 [[xTTPlayer getPlayerObj].BLEplay sendUserEq];
-                UINavigationController *VC2 = tab.viewControllers[2];
+//                UINavigationController *VC2 = tab.viewControllers[2];
 //                [(WirelessUPlateViewController *)VC2.topViewController deleteNOT];
-                tab.selectedIndex = 1;
+//                tab.selectedIndex = 1;
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_SWITCH_MODE" object:_dYHSJ];
             }else if ([_dBQRBS isEqual:@"ac"] || [_dBQRBS isEqual:@"55"] || [_dBQRBS isEqual:@"ab"]){
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_SWITCH_MODE" object:_dBQRBS];
             }else{
                 [xTTPlayer getPlayerObj].playerVCType = UnDefine;
-                UINavigationController *VC1 = tab.viewControllers[1];
+//                UINavigationController *VC1 = tab.viewControllers[1];
 //                [(WirelessNetworkcardViewController *)VC1.topViewController deleteNOT];
-                UINavigationController *VC2 = tab.viewControllers[2];
+//                UINavigationController *VC2 = tab.viewControllers[2];
 //                [(WirelessUPlateViewController *)VC2.topViewController deleteNOT];
-                tab.selectedIndex = 0;
+//                tab.selectedIndex = 0;
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"not_BTR_SWITCH_MODE" object:nil];
             }
         }

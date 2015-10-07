@@ -120,6 +120,7 @@
 - (void)connectOK
 {
     [self.devicesView reloadData];
+    
 }
 
 //连接丢失

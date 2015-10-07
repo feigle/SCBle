@@ -119,14 +119,11 @@ typedef NS_ENUM (NSInteger, SPP_Command) {
                             BID:(NSString *)bid
                          YHSJPY:(NSString *)yhsjpy
                         YHSJZCD:(int)yhsjzcd;
-
 + (NSString *)intToLittle:(NSString *)str length:(int)length;
 + (NSString *)NSDataToByteTohex:(NSData *)data;//data转string(去转义符)
 + (NSData *)stringToByte:(NSString*)string;//string转data (加转义符)
 + (NSString *)toBinary:(int)input;//10转2进制
-
 + (int)littleEndianModeToInt:(NSString *)str;
-
 + (NSString *)replaceUnicode:(NSString*)aUnicodeString;//Unicode转汉字
 
 @end
