@@ -41,7 +41,7 @@
     NSString *str = @"1106003a000000400012";
     NSData *data = [xTTBLEdata stringToByte:str];
     
-    NSString *str1 = @"1106003000000036001";
+    NSString *str1 = @"11060030000000360012";
     NSData *data1 = [xTTBLEdata stringToByte:str1];
 
     NSString *str2 = @"1107002800010000300012";

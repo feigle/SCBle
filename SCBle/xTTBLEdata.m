@@ -193,7 +193,8 @@
     if (type == 100) {
         [commandStr appendString:@"01"];
     }else{
-        [commandStr appendString:_arrCommand[type - 1]];
+        NSInteger index = type - 1;
+        [commandStr appendString:_arrCommand[index]];
     }
     
     [commandStr appendString:mlxx];
@@ -831,7 +832,7 @@
     }
     Byte tempbyt[1]={0};
     NSMutableData* bytes = [NSMutableData data];
-    for (int i = 0; i < hexString.length; i++)
+    for (int i = 0; i < hexString.length; ++i)
     {
         tempbyt[0] = [self ToHex:[hexString substringWithRange:NSMakeRange(i, 2)]];  ///将转化后的数放入Byte数组里
         [bytes appendBytes:tempbyt length:1];
